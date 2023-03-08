@@ -1,8 +1,8 @@
 using Microsoft.Extensions.Options;
-using Slobodianiuk.University.Example.Core.Interfaces;
-using Slobodianiuk.University.Example.Models.Configuration;
+using Zhuk.University.Tachka.Core.Interfaces;
+using Zhuk.University.Tachka.Models.Configuration;
 
-namespace Slobodianiuk.University.Example.Test
+namespace Zhuk.University.Tachka.Test
 {
     [TestClass]
     public class WeatherForecastTests : TestBase

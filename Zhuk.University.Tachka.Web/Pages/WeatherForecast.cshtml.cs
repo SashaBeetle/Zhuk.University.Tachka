@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using Slobodianiuk.University.Example.Core.Interfaces;
-using Slobodianiuk.University.Example.Models.Weather;
+using Zhuk.University.Tachka.Core.Interfaces;
+using Zhuk.University.Tachka.Models.Weather;
 
-namespace Slobodianiuk.University.Example.Web.Pages
+namespace Zhuk.University.Tachka.Web.Pages
 {
     public class WeatherForecastModel : PageModel
     {

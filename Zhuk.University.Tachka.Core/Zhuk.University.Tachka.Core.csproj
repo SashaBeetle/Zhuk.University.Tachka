@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Slobodianiuk.University.Example.Models\Zhuk.University.Tachka.Models.csproj" />
+    <ProjectReference Include="..\Zhuk.University.Tachka.Models\Zhuk.University.Tachka.Models.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zhuk.University.Tachka.Web", "Slobodianiuk.University.Example.Web\Zhuk.University.Tachka.Web.csproj", "{4CC9A013-D8C7-4CAC-AFE2-6DB8C6DB3CEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zhuk.University.Tachka.Web", "Zhuk.University.Tachka.Web\Zhuk.University.Tachka.Web.csproj", "{4CC9A013-D8C7-4CAC-AFE2-6DB8C6DB3CEA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zhuk.University.Tachka.Core", "Slobodianiuk.University.Example.Core\Zhuk.University.Tachka.Core.csproj", "{4712F45D-EE90-4027-9E84-6C9B7E1FFDEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zhuk.University.Tachka.Core", "Zhuk.University.Tachka.Core\Zhuk.University.Tachka.Core.csproj", "{4712F45D-EE90-4027-9E84-6C9B7E1FFDEF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zhuk.University.Tachka.Test", "Slobodianiuk.University.Example.Test\Zhuk.University.Tachka.Test.csproj", "{A921AC14-52EA-4D5A-99A5-6DCF5DA25B15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zhuk.University.Tachka.Test", "Zhuk.University.Tachka.Test\Zhuk.University.Tachka.Test.csproj", "{A921AC14-52EA-4D5A-99A5-6DCF5DA25B15}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zhuk.University.Tachka.Models", "Slobodianiuk.University.Example.Models\Zhuk.University.Tachka.Models.csproj", "{FFD1E09D-CE7D-4528-ADA5-3CE477D7F382}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zhuk.University.Tachka.Models", "Zhuk.University.Tachka.Models\Zhuk.University.Tachka.Models.csproj", "{FFD1E09D-CE7D-4528-ADA5-3CE477D7F382}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

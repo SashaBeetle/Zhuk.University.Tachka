@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using Slobodianiuk.University.Example.Core.Interfaces;
-using Slobodianiuk.University.Example.Models.Weather;
+using Zhuk.University.Tachka.Core.Interfaces;
+using Zhuk.University.Tachka.Models.Weather;
 
-namespace Slobodianiuk.University.Example.API.Controllers
+namespace Zhuk.University.Tachka.API.Controllers
 {
     [ApiController]
     [Route("/api/[controller]")]

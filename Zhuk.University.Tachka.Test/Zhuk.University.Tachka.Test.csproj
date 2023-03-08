@@ -20,8 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Slobodianiuk.University.Example.Core\Zhuk.University.Tachka.Core.csproj" />
-    <ProjectReference Include="..\Slobodianiuk.University.Example.Models\Zhuk.University.Tachka.Models.csproj" />
-    <ProjectReference Include="..\Slobodianiuk.University.Example.Web\Zhuk.University.Tachka.Web.csproj" />
+    <ProjectReference Include="..\Zhuk.University.Tachka.Core\Zhuk.University.Tachka.Core.csproj" />
+    <ProjectReference Include="..\Zhuk.University.Tachka.Models\Zhuk.University.Tachka.Models.csproj" />
+    <ProjectReference Include="..\Zhuk.University.Tachka.Web\Zhuk.University.Tachka.Web.csproj" />
   </ItemGroup>
 </Project>

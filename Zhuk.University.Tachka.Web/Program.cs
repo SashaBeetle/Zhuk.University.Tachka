@@ -1,4 +1,4 @@
-using Slobodianiuk.University.Example.Core;
+using Zhuk.University.Tachka.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
