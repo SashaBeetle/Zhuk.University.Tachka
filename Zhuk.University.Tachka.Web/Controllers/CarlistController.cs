@@ -1,22 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Zhuk.University.Tachka.Core.Interfaces;
 using Zhuk.University.Tachka.Models.Database;
+using System.Linq;
+using LinqToDB;
 
 namespace Zhuk.University.Tachka.Web.Controllers
 {
     public class CarlistController : Controller
     {
-        private readonly ICar _carService;
+        private readonly DataContext _dataContext;
 
-        public CarlistController(ICar carService)
+        public CarlistController(DataContext dataContext)
         {
-            _carService = carService;
+            _dataContext = dataContext;
         }
-        [HttpGet]
-        [Route("Get")]
-        public IEnumerable<Car> Get() 
+        
+        
+        public void AddCar(Car car)
         {
-            return _carService.GetCars();
+            
+
+
         }
         
        
