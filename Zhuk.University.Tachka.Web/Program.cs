@@ -2,11 +2,14 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Zhuk.University.Tachka.Web.Data;
+using Zhuk.University.Tachka.Database;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.RegisterCoreConfiguration(builder.Configuration);
 builder.Services.RegisterCoreDependencies();
+builder.Services.RegisterDatabaseDependencies(builder.Configuration);
 
 // Add services to the container.
 builder.Services.AddControllers();

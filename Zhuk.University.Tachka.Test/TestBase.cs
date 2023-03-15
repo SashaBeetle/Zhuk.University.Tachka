@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Zhuk.University.Tachka.Core;
+using Zhuk.University.Tachka.Database;
 
 namespace Zhuk.University.Tachka.Test
 {
@@ -15,7 +16,8 @@ namespace Zhuk.University.Tachka.Test
         {
             IConfigurationBuilder builder = new ConfigurationBuilder()
                         .AddJsonFile("appsettings.json", false)
-                        .AddJsonFile("appsettings.Development.json", true);
+                        .AddJsonFile("appsettings.Development.json", true)
+                        .AddUserSecrets<TestBase>();
 
             IConfigurationRoot configuration = builder.Build();
 
@@ -24,6 +26,7 @@ namespace Zhuk.University.Tachka.Test
             services.AddLogging();
             services.RegisterCoreDependencies();
             services.RegisterCoreConfiguration(configuration);
+            services.RegisterDatabaseDependencies(configuration);
 
             ServiceProvider = services.BuildServiceProvider();
             Logger = ServiceProvider.GetRequiredService<ILogger<TestBase>>();
