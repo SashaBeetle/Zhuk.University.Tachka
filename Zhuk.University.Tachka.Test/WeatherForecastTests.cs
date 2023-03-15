@@ -4,7 +4,7 @@ using Zhuk.University.Tachka.Models.Configuration;
 
 namespace Zhuk.University.Tachka.Test
 {
-    [TestClass]
+        [TestClass]
     public class WeatherForecastTests : TestBase
     {
         IWeatherForecastService _weatherForecastService;

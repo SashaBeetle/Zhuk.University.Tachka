@@ -22,6 +22,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Zhuk.University.Tachka.Core\Zhuk.University.Tachka.Core.csproj" />
     <ProjectReference Include="..\Zhuk.University.Tachka.Models\Zhuk.University.Tachka.Models.csproj" />
+	<ProjectReference Include="..\Zhuk.University.Tachka.Database\Zhuk.University.Tachka.Database.csproj" />
+
   </ItemGroup>
 
 </Project>
