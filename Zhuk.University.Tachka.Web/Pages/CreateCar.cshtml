@@ -1,4 +1,44 @@
 ﻿@page
-@model Zhuk.University.Tachka.Web.Pages.CreateCarModel
+@model CreateCarModel
 @{
+    ViewData["Title"] = "CreateCar";
 }
+
+<h1>Create Car</h1>
+
+<div class="container-fluid">
+    <form method="post">
+        <div class="row mb-3">
+            <div class ="col-2 px-2">
+                <label asp-for="Car.Model"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Car.Model" class="w-100 form-control" />
+                @Html.ValidationMessage("Car.Model")
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 px-2">
+                <label asp-for="Car.Name"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Car.Name" class="w-100 form-control" />
+                @Html.ValidationMessage("Car.Name")
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 px-2">
+                <label asp-for="Car.Price"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Car.Price" class="w-100 form-control" />
+                @Html.ValidationMessage("Car.Price")
+            </div>
+        </div>
+        <div class="row mt-4 mb-2">
+            <div class="col-3">
+                <input type="submit" class="w-100 form-control" />
+            </div>
+        </div>
+    </form>
+</div>

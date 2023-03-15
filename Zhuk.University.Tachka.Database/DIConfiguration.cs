@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Zhuk.University.Tachka.Database.Interfaces;
 using Zhuk.University.Tachka.Database.Services;
+using Zhuk.University.Tachka.Models.Database;
 
 namespace Zhuk.University.Tachka.Database
 {
@@ -19,6 +20,7 @@ namespace Zhuk.University.Tachka.Database
             services.AddDbContext<TachkaDbContext>((x)=> x.UseSqlServer(configuration.GetConnectionString("TachkaDatabase")));
 
             services.AddScoped(typeof(IDbEntityService<>), typeof(DbEntityService<>));
+             
                 
         }
     }
