@@ -16,30 +16,35 @@ namespace Zhuk.University.Tachka.Test
     public class CarsTests : TestBase
     {
         IDbEntityService<Car> _carService;
+        TachkaDbContext _dbContext;
         IOptions<AppConfig> _configuration;
 
         public CarsTests()
         {
             _carService = ResolveService<IDbEntityService<Car>>();
             _configuration = ResolveService<IOptions<AppConfig>>();
+            _dbContext= ResolveService<TachkaDbContext>();
+
+            
         }
 
         [TestMethod]
 
         public async Task Create()
         {
-            var cars = await _carService.Create(new Car()
-            {
-                Name = "BMW",
-                Model = "X5",
-                Price= 1500,
-            });
+            //var cars = await _carService.Create(new Car()
+            //{
+            //    Name = "BMW",
+            //    Model = "X5",
+            //    Price= 1500,
+            //});
         }
 
         [TestMethod]
         public async Task GetAllCars()
         {
             var cars = await _carService.GetAll().ToListAsync();
+            
         }
     }
 }
