@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Net.Security;
 using Zhuk.University.Tachka.Core.Interfaces;
 using Zhuk.University.Tachka.Models.Weather;
 
@@ -19,5 +20,6 @@ namespace Zhuk.University.Tachka.Web.Pages
         {
             Forecasts = _weatherForecastService.GetRandomForecast().ToList();
         }
+       
     }
 }

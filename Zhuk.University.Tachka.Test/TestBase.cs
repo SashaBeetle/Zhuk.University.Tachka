@@ -23,7 +23,7 @@ namespace Zhuk.University.Tachka.Test
 
             var services = new ServiceCollection();
 
-            services.AddLogging();
+            services.AddLogging((config) => config.AddDebug());
             services.RegisterCoreDependencies();
             services.RegisterCoreConfiguration(configuration);
             services.RegisterDatabaseDependencies(configuration);

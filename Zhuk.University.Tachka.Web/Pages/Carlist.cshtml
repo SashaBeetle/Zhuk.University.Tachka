@@ -1,43 +1,55 @@
 ﻿@page
-@model Zhuk.University.Tachka.Web.Pages.CarlistModel
+@model CarlistModel
 
 @{
     ViewData["Title"] = "Carlist";
 }
 
-<h1>Carlist</h1>
+<form id="form1" >  
+    <div>   
+        <table>
+            <tr>    
+                <td>Firm</td>
+                <td><textarea id="firm" ></textarea></td>
+            </tr>
+            <tr>
+                <td>Model</td>
+                <td><textarea id="model"></textarea></td>
 
-<h4>Car</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Car.Name" class="control-label"></label>
-                <input asp-for="Car.Name" class="form-control" />
-                <span asp-validation-for="Car.Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Car.Model" class="control-label"></label>
-                <input asp-for="Car.Model" class="form-control" />
-                <span asp-validation-for="Car.Model" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Car.Price" class="control-label"></label>
-                <input asp-for="Car.Price" class="form-control" />
-                <span asp-validation-for="Car.Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><textarea id="price"></textarea></td>
+            </tr>
+            <tr> 
+                <td colspan="2" align="center">
+                <button type="button" onclick="">Save!</button>
+                </td>
+            </tr>
+           
+        </table>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
+</form>
+<table>
+    <thead> 
+        <tr>  
+           @* @{
+                foreach(var El in Model.Cars)
+                {
+                    <th>
+                        @Html.DisplayFor(modelEl => El.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelEl => El.Model)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelEl => El.Price)
+                    </th>
+                }
+            }*@
+        </tr>
+    </thead>
+</table>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
