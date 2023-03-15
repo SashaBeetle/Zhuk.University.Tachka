@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zhuk.University.Tachka.Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zhuk.University.Tachka.Models", "Zhuk.University.Tachka.Models\Zhuk.University.Tachka.Models.csproj", "{FFD1E09D-CE7D-4528-ADA5-3CE477D7F382}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zhuk.University.Tachka.Database", "Zhuk.University.Tachka.Database\Zhuk.University.Tachka.Database.csproj", "{60E0240D-006E-44CF-8A1C-7A1272F70E91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zhuk.University.Tachka.Database", "Zhuk.University.Tachka.Database\Zhuk.University.Tachka.Database.csproj", "{60E0240D-006E-44CF-8A1C-7A1272F70E91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

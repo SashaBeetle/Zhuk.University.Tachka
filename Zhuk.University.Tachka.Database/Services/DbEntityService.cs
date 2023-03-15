@@ -18,6 +18,7 @@ namespace Zhuk.University.Tachka.Database.Services
         public DbEntityService(TachkaDbContext dbcontext, bool disposed)
         {
             _dbcontext = dbcontext;
+            _disposed = disposed;
         }
         private async Task SaveChanges()
         {
@@ -40,7 +41,11 @@ namespace Zhuk.University.Tachka.Database.Services
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            if(_disposed)
+                return;
+
+            _dbcontext.Dispose();
+            _disposed = true;
         }
 
         public IQueryable<T> GetAll()
