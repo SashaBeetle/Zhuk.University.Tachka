@@ -5,52 +5,24 @@
     ViewData["Title"] = "Carlist";
 }
 
-<form id="form1" >  
-    <div>   
-        <table>
-            <tr>    
-                <td>Firm</td>
-                <td><textarea id="firm" ></textarea></td>
-            </tr>
-            <tr>
-                <td>Model</td>
-                <td><textarea id="model"></textarea></td>
-
-            </tr>
-            <tr>
-                <td>Price</td>
-                <td><textarea id="price"></textarea></td>
-            </tr>
-            <tr> 
-                <td colspan="2" align="center">
-                <button type="button" onclick="">Save!</button>
-                </td>
-            </tr>
-           
-        </table>
-    </div>
-</form>
-<table>
+<table class="table">
     <thead> 
-        <tr>  
-           @* @{
-                foreach(var El in Model.Cars)
-                {
-                    <th>
+            @foreach(var El in Model.Cars)
+            {
+              <tr>  
+
+                    <td>
                         @Html.DisplayFor(modelEl => El.Name)
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelEl => El.Model)
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelEl => El.Price)
-                    </th>
-                }
-            }*@
-        </tr>
+                    </td>
+              </tr>
+
+            }
     </thead>
 </table>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

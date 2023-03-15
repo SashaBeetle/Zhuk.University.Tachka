@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Zhuk.University.Tachka.Database.Interfaces;
 using Zhuk.University.Tachka.Models.Database;
 using Zhuk.University.Tachka.Web.Data;
@@ -19,9 +20,9 @@ namespace Zhuk.University.Tachka.Web.Pages
         { 
             _carService = carService; 
         }
-        public void GetOn()
+        public async Task GetOn()
         {
-            Cars = _carService.GetAll().ToList();
+            Cars = await _carService.GetAll().ToListAsync();
         }
     }
 }

@@ -15,10 +15,9 @@ namespace Zhuk.University.Tachka.Database.Services
         private readonly TachkaDbContext _dbcontext;
         private bool _disposed;
 
-        public DbEntityService(TachkaDbContext dbcontext, bool disposed)
+        public DbEntityService(TachkaDbContext dbcontext)
         {
             _dbcontext = dbcontext;
-            _disposed = disposed;
         }
         private async Task SaveChanges()
         {
