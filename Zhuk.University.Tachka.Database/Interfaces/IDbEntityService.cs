@@ -11,12 +11,12 @@ namespace Zhuk.University.Tachka.Database.Interfaces
     {
         Task<T?> GetById(int id);
 
-        Task<T> Create (T entity);
+        Task<T> Create(T entity);
 
-        Task<T> Update (T entity);
+        Task<T> Update(T entity);
 
-        Task Delete (T entity);
+        Task Delete(T entity);
 
-        IQueryable<T> GetAll ();
+        IQueryable<T> GetAll();
     }
 }

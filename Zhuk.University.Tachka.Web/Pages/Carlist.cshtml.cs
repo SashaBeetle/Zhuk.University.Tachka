@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Zhuk.University.Tachka.Database;
 using Zhuk.University.Tachka.Database.Interfaces;
 using Zhuk.University.Tachka.Models.Database;
 using Zhuk.University.Tachka.Web.Data;
@@ -14,15 +15,19 @@ namespace Zhuk.University.Tachka.Web.Pages
 {
     public class CarlistModel : PageModel
     {
-        public IList<Car> Cars { get; set; }
+        public IList<Car> Cars { get; private set; }
+
         private readonly IDbEntityService<Car> _carService;
+
         public CarlistModel(IDbEntityService<Car> carService) 
-        { 
-            _carService = carService; 
+        {
+           _carService = carService; 
         }
         public async Task GetOn()
         {
-            Cars = await _carService.GetAll().ToListAsync();
+            
+           Cars = await _carService.GetAll().ToListAsync();
+            
         }
     }
 }
