@@ -11,4 +11,4 @@
 * Connect Application Insights ⚠️
 * Add README on GIT ✅
 ## About site
-[Site on Azure](tachka.azurewebsites.net)
+[Site on Azure](https://tachka.azurewebsites.net/)
