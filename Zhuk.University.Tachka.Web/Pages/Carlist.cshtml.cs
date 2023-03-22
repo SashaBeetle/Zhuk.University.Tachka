@@ -23,9 +23,8 @@ namespace Zhuk.University.Tachka.Web.Pages
         {
            _carService = carService; 
         }
-        public async Task GetOn()
+        public async Task OnGet()
         {
-
             Cars = await _carService.GetAll().ToListAsync();
             
         }
