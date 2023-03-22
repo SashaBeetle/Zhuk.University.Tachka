@@ -24,8 +24,6 @@ namespace Zhuk.University.Tachka.Test
             _carService = ResolveService<IDbEntityService<Car>>();
             _configuration = ResolveService<IOptions<AppConfig>>();
             _dbContext= ResolveService<TachkaDbContext>();
-
-            
         }
 
         [TestMethod]
@@ -44,7 +42,6 @@ namespace Zhuk.University.Tachka.Test
         public async Task GetAllCars()
         {
             var cars = await _carService.GetAll().ToListAsync();
-            
         }
     }
 }
