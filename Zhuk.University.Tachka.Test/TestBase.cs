@@ -29,8 +29,6 @@ namespace Zhuk.University.Tachka.Test
                 config.AddConfiguration(configuration.GetSection("Loggin"));
                 config.AddDebug();
             });
-            services.RegisterCoreDependencies();
-            services.RegisterCoreConfiguration(configuration);
             services.RegisterDatabaseDependencies(configuration);
 
             ServiceProvider = services.BuildServiceProvider();

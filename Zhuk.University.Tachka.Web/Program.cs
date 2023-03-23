@@ -7,8 +7,6 @@ using Zhuk.University.Tachka.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.RegisterCoreConfiguration(builder.Configuration);
-builder.Services.RegisterCoreDependencies();
 builder.Services.RegisterDatabaseDependencies(builder.Configuration);
 
 builder.Services.AddApplicationInsightsTelemetry();
