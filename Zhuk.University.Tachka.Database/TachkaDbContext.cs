@@ -6,6 +6,7 @@ namespace Zhuk.University.Tachka.Database
     public class TachkaDbContext : DbContext
     {
         public DbSet<Car> Cars { get; set; }
+        public DbSet<User> Users { get; set; }
         public TachkaDbContext() { }
         public TachkaDbContext(DbContextOptions<TachkaDbContext> options) : base(options) { }
 
