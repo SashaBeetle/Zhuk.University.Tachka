@@ -5,6 +5,11 @@ namespace Zhuk.University.Tachka.Models.Helpers
 {
     public static class HashPasswordHelper
     {
+        public static object HashPassowrd(object newPassword)
+        {
+            throw new NotImplementedException();
+        }
+
         public static string HashPassword(string password)
         {
             using(var sha256=SHA256.Create())

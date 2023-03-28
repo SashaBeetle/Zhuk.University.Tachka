@@ -58,5 +58,6 @@ namespace Zhuk.University.Tachka.Database.Services
 
             return EntityFromDb.Entity;
         }
+
     }
 }
