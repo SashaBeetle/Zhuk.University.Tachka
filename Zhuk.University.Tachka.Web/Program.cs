@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Zhuk.University.Tachka.Web.Data;
 using Zhuk.University.Tachka.Database;
+using Zhuk.University.Tachka.Web;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,17 +12,21 @@ builder.Services.RegisterDatabaseDependencies(builder.Configuration);
 
 builder.Services.AddApplicationInsightsTelemetry();
 
+builder.Services.AddAutoMapper(typeof(UserProfile));
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<ZhukUniversityTachkaWebContext>(options =>
+    
     options.UseSqlServer(builder.Configuration.GetConnectionString("ZhukUniversityTachkaWebContext") ?? throw new InvalidOperationException("Connection string 'ZhukUniversityTachkaWebContext' not found.")));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+app.MapControllers();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -32,7 +37,6 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
 
 app.UseRouting();
 

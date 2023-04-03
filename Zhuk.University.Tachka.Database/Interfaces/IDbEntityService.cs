@@ -2,9 +2,10 @@
 
 namespace Zhuk.University.Tachka.Database.Interfaces
 {
-    public interface IDbEntityService<T> : IDisposable where T:Dbitem
+    public interface IDbEntityService<T> : IDisposable where T: Dbitem
     {
         Task<T?> GetById(int id);
+        T GetByIdforUser(long id);
 
         Task<T> Create(T entity);
 
