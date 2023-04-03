@@ -17,7 +17,6 @@ namespace Zhuk.University.Tachka.Database.Services
         {
             await _dbcontext.SaveChangesAsync();
         }
-
         public async Task<T> Create(T entity)
         {
             var EntityFromDb = await _dbcontext.Set<T>().AddAsync(entity);
@@ -59,5 +58,17 @@ namespace Zhuk.University.Tachka.Database.Services
             return EntityFromDb.Entity;
         }
 
+        public T GetByIdforUser(long id)
+        {
+            var result = _dbcontext.Set<T>().FirstOrDefault(x => x.Id == id);
+
+            if (result == null)
+            {
+                //todo: need to add logger
+                return null;
+            }
+
+            return result;
+        }
     }
 }
