@@ -19,37 +19,37 @@ Contacts:
 * ✅ Connect Database
 * ✅ Connect ORM Entity
 * ✅ Create Schemas for objects
+
 ### 3. API
-*
-*
-*
-*
+* 🔳 Controller
+
 ### 4. Authorization
 * ✅ Create Login and Register Pages
 * ✅ Create Controller
 * ✅ Create Service
 * ✅ Create Models
+
 ### 5. Order
-*
-*
-*
-*
+* 🔳 Controllers
+* 🔳 Pages
+* 🔳 Features
+
 ### 6. Loggs
 * 🔳 Add logs for Authorization
 * 🔳 Add logs for Orders
 * 🔳 Add logs for User Profile
+
 ### 7. Test
 * 🔳 Test Authorization
 * 🔳 Test Orders
 * 🔳 Test User Profile
-*
+
 ### 8. Azure
 * ✅ Deploy the project
 * ✅ Connect Application Insights
 * ✅ Connect Azure Database
 * ✅ CI/CD
+
 ### 9. Git
 * ✅ Add README on GIT
 * 🔳 CI/CD
-*
-*
