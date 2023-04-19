@@ -4,8 +4,6 @@
     ViewData["Title"] = "Account Login";
 }
 
-<head>
-</head>
 
 <form asp-controller="Auth" asp-action="Login" method="post">
     <input type="hidden" asp-for="ReturnUrl" />
@@ -14,7 +12,7 @@
         <label>Username</label>
         <input asp-for="Username" class="input"/>
         <span asp-validation-for="Username"></span>
-    </div>
+    </div>  
     <div class="block">
         <label>Password</label>
         <input asp-for="Password" class="input"/>

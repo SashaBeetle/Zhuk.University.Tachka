@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.IO;
+using System.Net;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Zhuk.University.Tachka.Web.Pages
@@ -6,15 +8,15 @@ namespace Zhuk.University.Tachka.Web.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
+
         }
 
         public void OnGet()
         {
-
+          
         }
     }
 }
