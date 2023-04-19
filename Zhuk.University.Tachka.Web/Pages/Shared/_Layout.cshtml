@@ -15,19 +15,18 @@
     <link rel="icon" type="image/png" href="~/generalicon.png" sizes="32x32">
 </head>
 
-<body>
+<body data-bs-theme="dark">
     <header class="p-3 mb-3 border-bottom">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
                     <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
                 </a>
-
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a asp-area="" asp-page="/Index" class="nav-link px-2 link-secondary">Tachka</a></li>
-                    <li><a href="#" class="nav-link px-2 link-dark">Page1</a></li>
-                    <li><a href="#" class="nav-link px-2 link-dark">Page2</a></li>
-                    <li><a asp-area="" asp-page="/About" class="nav-link px-2 link-dark">About</a></li>
+                    <li><a asp-area="" asp-page="/Index" class="nav-link px-2 link-light">Tachka</a></li>
+                    <li><a href="#" class="nav-link px-2 link-secondary text-gray">Page1</a></li>
+                    <li><a href="#" class="nav-link px-2 link-secondary">Page2</a></li>
+                    <li><a asp-area="" asp-page="/About" class="nav-link px-2 link-secondary">About</a></li>
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -45,6 +44,17 @@
                         <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" asp-area="" asp-page="/Account/Login">Login</a></li>
+                        <li>
+                            <a class="dropdown-item">Dark mode</a>
+                            <div class="form-check form-switch mx-4">
+                                <input class="form-check-input p-2"
+                                       type="checkbox"
+                                       role="switch"
+                                       id="flexSwitchCheckChecked"
+                                       checked
+                                       onclick="myFunction()" />
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -62,7 +72,13 @@
             &copy; 2023 - Zhuchok Pavuchok - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
-
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.dataset.bsTheme =
+                element.dataset.bsTheme == "light" ? "dark" : "light";
+        }
+    </script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script
