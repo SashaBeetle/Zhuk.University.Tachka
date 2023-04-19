@@ -3,9 +3,6 @@
 @{
     ViewData["Title"] = "Account Register";
 }
-<head>
-    <link href=@Url.Content("~/styles/app.css") rel="stylesheet" type="text/css" />
-</head>
 
 <form asp-controller="Auth" asp-action="Register" method="post">
     <input type="hidden" asp-for="ReturnUrl" />
