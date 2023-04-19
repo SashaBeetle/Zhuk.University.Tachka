@@ -1,5 +1,5 @@
 # [Tachka](https://tachka.azurewebsites.net/)
-### Project for 'Web Technology' course in Lviv National University of Ivan Franko
+### Project for `'Web Technology'` course in Lviv National University of Ivan Franko
 Contacts:
 * [Telegram](https://t.me/zhuk_sasha) 
 * Email: zuks01123@gmail.com
