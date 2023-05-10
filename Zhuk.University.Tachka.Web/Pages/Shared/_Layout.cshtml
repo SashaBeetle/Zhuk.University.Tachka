@@ -42,6 +42,8 @@
                         <li><a class="dropdown-item" asp-area="" asp-page="/CreateCar">Create Car</a></li>
                         <li><a class="dropdown-item" href="#">Settings</a></li>
                         <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#"></a></li>
+                        <partial name="_LoginPartial" />
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" asp-area="" asp-page="/Account/Login">Login</a></li>
                         <li>
@@ -49,7 +51,6 @@
                             <div class="form-check form-switch mx-4">
                                 <input class="form-check-input p-2"
                                        type="checkbox"
-                                       role="switch"
                                        id="flexSwitchCheckChecked"
                                        checked
                                        onclick="myFunction()" />

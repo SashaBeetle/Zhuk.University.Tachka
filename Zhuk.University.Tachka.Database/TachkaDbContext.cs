@@ -1,12 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Zhuk.University.Tachka.Models.Database;
 
 namespace Zhuk.University.Tachka.Database
 {
-    public class TachkaDbContext : DbContext
+    public class TachkaDbContext : IdentityDbContext
     {
         public DbSet<Car> Cars { get; set; }
-        public DbSet<User> Users { get; set; }
         public TachkaDbContext() { }
         public TachkaDbContext(DbContextOptions<TachkaDbContext> options) : base(options) { }
 
@@ -18,7 +18,7 @@ namespace Zhuk.University.Tachka.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

@@ -1,4 +1,4 @@
-# [Tachka](https://tachka.azurewebsites.net/)
+# [Tachka](https://carsharing.azurewebsites.net)
 ### Project for `'Web Technology'` course in Lviv National University of Ivan Franko
 Contacts:
 * [Telegram](https://t.me/zhuk_sasha) 

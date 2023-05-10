@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Options;
 using Zhuk.University.Tachka.Database;
 using Zhuk.University.Tachka.Database.Interfaces;
-using Zhuk.University.Tachka.Models.Configuration;
 using Zhuk.University.Tachka.Models.Database;
 
 namespace Zhuk.University.Tachka.Test
@@ -12,12 +11,10 @@ namespace Zhuk.University.Tachka.Test
     {
         IDbEntityService<Car> _carService;
         TachkaDbContext _dbContext;
-        IOptions<AppConfig> _configuration;
 
         public CarsTests()
         {
             _carService = ResolveService<IDbEntityService<Car>>();
-            _configuration = ResolveService<IOptions<AppConfig>>();
             _dbContext= ResolveService<TachkaDbContext>();
         }
 
