@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -18,8 +19,14 @@ namespace Zhuk.University.Tachka.Database
         public static void RegisterDatabaseDependencies(this IServiceCollection services, IConfigurationRoot configuration)
         {
             services.AddDbContext<TachkaDbContext>((x)=> x.UseSqlServer(configuration.GetConnectionString("TachkaDatabase")));
+            services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddScoped(typeof(IDbEntityService<>), typeof(DbEntityService<>));
+        }
+
+        public static void RegisterIdentityDependencies(this IServiceCollection services)
+        {
+            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<TachkaDbContext>();
         }
     }
 }
