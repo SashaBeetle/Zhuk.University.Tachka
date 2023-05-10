@@ -5,6 +5,8 @@ using Zhuk.University.Tachka.Web.Data;
 using Zhuk.University.Tachka.Database;
 using Zhuk.University.Tachka.Web;
 using Microsoft.AspNetCore.Identity;
+using Blazorise;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
