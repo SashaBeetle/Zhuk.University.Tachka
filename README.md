@@ -94,4 +94,5 @@ Than (if you have App Services) add line of your connection string to applicatio
 - Task: I introduce a new feature on the website - Dark Mode. This feature will enable users to switch the website's interface to a darker color scheme that is easier on the eyes in low light environments.
 - Name: Vitalii Synytskyi
 - [My project](https://github.com/VitaliySynytskyi/CodeFlow)
-- [Pull Request](https://github.com/SashaBeetle/Zhuk.University.Tachka/commit/851a4a7e8d9b94422127ae645520be15eeae0765)
+- [Pull Request 1](https://github.com/SashaBeetle/Zhuk.University.Tachka/commit/851a4a7e8d9b94422127ae645520be15eeae0765)
+- [Pull Request 2](https://github.com/SashaBeetle/Zhuk.University.Tachka/commit/46954eb068c609e2f13a6cc9d344a6c3034379a8)
