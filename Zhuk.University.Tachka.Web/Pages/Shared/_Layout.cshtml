@@ -26,7 +26,7 @@
                     <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
                 </a>
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a asp-area="" asp-page="/Index" class="nav-link px-2 link-light">Tachka</a></li>
+                    <li><a asp-area="" asp-page="/Index" class="nav-link px-2 text-gray">Tachka</a></li>
                     <li><a href="#" class="nav-link px-2 link-secondary text-gray">Page1</a></li>
                     <li><a href="#" class="nav-link px-2 link-secondary">Page2</a></li>
                     <li><a asp-area="" asp-page="/About" class="nav-link px-2 link-secondary">About</a></li>
@@ -35,7 +35,10 @@
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                 </form>
-
+                
+                <a class="nav-link px-2 link-secondary text-gray col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 " asp-area="Identity" title="Manage">@User.Identity?.Name</a>
+                
+                
                 <div class="dropdown text-end">
                     <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
@@ -43,14 +46,20 @@
                     <ul class="dropdown-menu text-small">
                         <li><a class="dropdown-item" asp-area="" asp-page="/CarList">All Cars</a></li>
                         <li><a class="dropdown-item" asp-area="" asp-page="/CreateCar">Create Car</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li> </li>
+                        <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Settings</a></li>
                         <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#"></a></li>
+                        <li><i class="dropdown-item  bi bi-brightness-high-fill" id="toggleDark"></i></li>
+                        <li>
+                            
+                        </li>
                         <partial name="_LoginPartial" />
                         <li><hr class="dropdown-divider"></li>
+                        <form class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                            <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                        </form>
                     </ul>
                 </div>
+
             </div>
         </div>
     </header>
