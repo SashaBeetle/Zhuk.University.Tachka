@@ -46,9 +46,11 @@ Than (if you have App Services) add line of your connection string to applicatio
 ## Decomposition of tasks
 ### 1. Frontend
 * ✅ Display Database
-* 🔳 Display API
+* ✅/🔳 Display API
 * ✅ Display User register and login
-* 🔳 Display User profile
+* ✅ Display User profile
+* 🔳 Display beautiful main page
+* 🔳 Create beautiful site design
 
 ### 2. Database
 * ✅ Create Database
@@ -57,6 +59,7 @@ Than (if you have App Services) add line of your connection string to applicatio
 * ✅ Create Schemas for objects
 
 ### 3. API
+* 🔳/✅ User Avatar
 * 🔳 Controller
 
 ### 4. Authorization
@@ -88,7 +91,7 @@ Than (if you have App Services) add line of your connection string to applicatio
 
 ### 9. Git
 * ✅ Add README on GIT
-* 🔳 CI/CD
+* ✅ CI/CD
 
 # 📒 Lab 3 
 - Task: I introduce a new feature on the website - Dark Mode. This feature will enable users to switch the website's interface to a darker color scheme that is easier on the eyes in low light environments.
