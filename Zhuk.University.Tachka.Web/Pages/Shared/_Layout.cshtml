@@ -27,8 +27,8 @@
                 </a>
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a asp-area="" asp-page="/Index" class="nav-link px-2 text-gray">Tachka</a></li>
-                    <li><a href="#" class="nav-link px-2 link-secondary text-gray">Page1</a></li>
-                    <li><a href="#" class="nav-link px-2 link-secondary">Page2</a></li>
+                    <li><a class="nav-link px-2 link-secondary" asp-area="" asp-page="/CarList">Cars</a></li>
+                    <li><a href="#" class="nav-link px-2 link-secondary">Suggestions</a></li>
                     <li><a asp-area="" asp-page="/About" class="nav-link px-2 link-secondary">About</a></li>
                 </ul>
 
@@ -44,7 +44,6 @@
                         <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small">
-                        <li><a class="dropdown-item" asp-area="" asp-page="/CarList">All Cars</a></li>
                         <li><a class="dropdown-item" asp-area="" asp-page="/CreateCar">Create Car</a></li>
                         <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Settings</a></li>
                         <li><a class="dropdown-item" href="#">Profile</a></li>
