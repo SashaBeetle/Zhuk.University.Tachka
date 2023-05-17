@@ -26,6 +26,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<TachkaDbContext>();
 
+
 builder.Services.AddAuthentication()
     .AddGoogle(googleOptions =>
     {
@@ -33,6 +34,7 @@ builder.Services.AddAuthentication()
     googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
     });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
