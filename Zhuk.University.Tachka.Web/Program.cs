@@ -6,9 +6,10 @@ using Zhuk.University.Tachka.Database;
 using Zhuk.University.Tachka.Web;
 using Microsoft.AspNetCore.Identity;
 using Blazorise;
-
+using Microsoft.AspNetCore.Authentication.Google;
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 builder.Services.RegisterDatabaseDependencies(builder.Configuration);
 //builder.Services.RegisterIdentityDependencies();
@@ -25,6 +26,12 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<TachkaDbContext>();
 
+builder.Services.AddAuthentication()
+    .AddGoogle(googleOptions =>
+    {
+    googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+    googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+    });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 builder.Services.AddEndpointsApiExplorer();
