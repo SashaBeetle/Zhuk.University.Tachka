@@ -31,7 +31,7 @@ builder.Services.AddAuthentication()
     .AddGoogle(googleOptions =>
     {
         googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
-        googleOptions.ClientSecret = builder.Configuration["GOOGLE_PROVIDER_AUTHENTICATION_SECRET"];
+        googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
     });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
