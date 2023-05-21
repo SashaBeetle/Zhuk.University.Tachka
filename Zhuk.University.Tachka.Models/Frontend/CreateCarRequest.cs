@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace Zhuk.University.Tachka.Models.Frontend
@@ -11,5 +12,6 @@ namespace Zhuk.University.Tachka.Models.Frontend
         public string? Model { get; set; }
         [Required]
         public decimal? Price { get; set; }
+        public DateTime? PlacementTime { get; set; }
     }
 }

@@ -32,7 +32,8 @@ namespace Zhuk.University.Tachka.Web.Pages
             {
                 Name = Car?.Name,
                 Model= Car?.Model,
-                Price= Car?.Price
+                Price= Car?.Price,
+                PlacementTime= DateTime.Now
             });
             return new RedirectToPageResult("/Carlist");
         }
