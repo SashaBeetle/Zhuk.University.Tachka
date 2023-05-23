@@ -237,8 +237,8 @@ namespace Zhuk.University.Tachka.Database.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("PlacementTime")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("PlacementTime")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal?>("Price")
                         .HasColumnType("decimal(18,2)");

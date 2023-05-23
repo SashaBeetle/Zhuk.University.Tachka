@@ -12,8 +12,8 @@ using Zhuk.University.Tachka.Database;
 namespace Zhuk.University.Tachka.Database.Migrations
 {
     [DbContext(typeof(TachkaDbContext))]
-    [Migration("20230521073854_TimeMigration")]
-    partial class TimeMigration
+    [Migration("20230523191652_DateWithoutTime")]
+    partial class DateWithoutTime
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -240,8 +240,8 @@ namespace Zhuk.University.Tachka.Database.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("PlacementTime")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("PlacementTime")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal?>("Price")
                         .HasColumnType("decimal(18,2)");

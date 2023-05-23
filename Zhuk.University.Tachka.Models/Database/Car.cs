@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Zhuk.University.Tachka.Models.Database
 {
@@ -7,6 +9,7 @@ namespace Zhuk.University.Tachka.Models.Database
         public string? Name { get; set; }
         public string? Model { get; set; }
         public decimal? Price { get; set; }
-        public DateTime? PlacementTime { get; set; }
+       // [Column(TypeName = "Date")]
+        public string? PlacementTime { get; set; }
     }
 }

@@ -1,20 +1,19 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace Zhuk.University.Tachka.Database.Migrations
 {
     /// <inheritdoc />
-    public partial class TimeMigration : Migration
+    public partial class DateWithoutTime : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<DateTime>(
+            migrationBuilder.AddColumn<string>(
                 name: "PlacementTime",
                 table: "Cars",
-                type: "datetime2",
+                type: "nvarchar(max)",
                 nullable: true);
         }
 
