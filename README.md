@@ -102,5 +102,5 @@ Than (if you have App Services) add line of your connection string to applicatio
 
 # Lab 4
 Zakala Oleksandr
-https://github.com/Rovikido/SafeRoute
-https://github.com/Rovikido/Zhuk.University.Tachka/pull/1
+Reviewer project: https://github.com/Rovikido/SafeRoute
+Pull request link: https://github.com/Rovikido/Zhuk.University.Tachka/pull/1
