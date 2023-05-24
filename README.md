@@ -101,6 +101,6 @@ Than (if you have App Services) add line of your connection string to applicatio
 - [Pull Request 2](https://github.com/SashaBeetle/Zhuk.University.Tachka/commit/46954eb068c609e2f13a6cc9d344a6c3034379a8)
 
 # Lab 4
-Zakala Oleksandr
+Zakala Oleksandr\n
 Reviewer project: https://github.com/Rovikido/SafeRoute
-Pull request link: https://github.com/Rovikido/Zhuk.University.Tachka/pull/1
+\nPull request link: https://github.com/Rovikido/Zhuk.University.Tachka/pull/1
