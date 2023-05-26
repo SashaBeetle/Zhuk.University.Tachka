@@ -12,7 +12,7 @@ using Zhuk.University.Tachka.Database;
 namespace Zhuk.University.Tachka.Database.Migrations
 {
     [DbContext(typeof(TachkaDbContext))]
-    [Migration("20230523191652_DateWithoutTime")]
+    [Migration("20230526073336_DateWithoutTime")]
     partial class DateWithoutTime
     {
         /// <inheritdoc />
