@@ -9,7 +9,7 @@ namespace Zhuk.University.Tachka.Models.Database
         public string? Name { get; set; }
         public string? Model { get; set; }
         public decimal? Price { get; set; }
-       // [Column(TypeName = "Date")]
+        //[Column(TypeName = "Date")]
         public string? PlacementTime { get; set; }
     }
 }
