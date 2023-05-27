@@ -32,7 +32,6 @@ namespace Zhuk.University.Tachka.Web.Pages
         {
             string DateWithoutTime = date.ToShortDateString(); //ToString("dd / MM / yyyy");
 
-            JSONToViewModel JSONToViewModel = new JSONToViewModel();
             LocationHelper LocHelper = new LocationHelper();
             var result = await LocHelper.GetGeoInfo();
             var JObj = JObject.Parse(result);
