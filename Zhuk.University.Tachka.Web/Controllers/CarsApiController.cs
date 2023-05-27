@@ -8,11 +8,6 @@ namespace Zhuk.University.Tachka.Web.Controllers
     [ApiController]
     public class CarsApiController : Controller
     {
-        public async Task<IActionResult> LocationExample()
-        {
-            LocationHelper LocHelper = new LocationHelper();
-            var result = await LocHelper.GetGeoInfo();
-            return View();
-        }
+
     }
 }
