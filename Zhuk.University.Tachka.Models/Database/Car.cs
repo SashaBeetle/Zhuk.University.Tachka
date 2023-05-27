@@ -11,5 +11,6 @@ namespace Zhuk.University.Tachka.Models.Database
         public decimal? Price { get; set; }
         //[Column(TypeName = "Date")]
         public string? PlacementTime { get; set; }
+        public string? PlacementCity { get; set; }
     }
 }
