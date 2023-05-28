@@ -16,10 +16,14 @@ namespace Zhuk.University.Tachka.Web.Pages
         [BindProperty]
         public CreateCarRequest Car { get; set; }
 
+
         private readonly IDbEntityService<Car> _carService;
 
-        DateTime date = DateTime.Now;
+        private LocationHelper LocHelper = new LocationHelper();
+
+        private DateTime date = DateTime.Now;
         
+
         public CreateCarModel(IDbEntityService<Car> carService)
         {
             _carService = carService;
@@ -32,8 +36,6 @@ namespace Zhuk.University.Tachka.Web.Pages
         {
             string DateWithoutTime = date.ToShortDateString(); //ToString("dd / MM / yyyy");
 
-            JSONToViewModel JSONToViewModel = new JSONToViewModel();
-            LocationHelper LocHelper = new LocationHelper();
             var result = await LocHelper.GetGeoInfo();
             var JObj = JObject.Parse(result);
             var city = (string)JObj["city"];

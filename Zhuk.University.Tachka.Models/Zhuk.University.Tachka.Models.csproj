@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="Configuration\" />
-    <Folder Include="ViewModels\Account\" />
   </ItemGroup>
 
 </Project>
