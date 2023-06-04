@@ -35,8 +35,8 @@ builder.Services.AddAuthentication()
     })
     .AddGoogle(googleOptions =>
      {
-         googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
-         googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+         googleOptions.ClientId = "603914607095-t71mb999anej3su5in904sr3a1l2pbmt.apps.googleusercontent.com";
+         googleOptions.ClientSecret = "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";
      })
     .AddTwitter(twitterOptions =>
     {
