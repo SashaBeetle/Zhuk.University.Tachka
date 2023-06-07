@@ -19,7 +19,7 @@ namespace Zhuk.University.Tachka.Database.Helpers
         private async Task<string> GetIpAdress()
         {
             var ipAddress = await _httpClient.GetAsync($"http://ipinfo.io/ip");
-            if(ipAddress.IsSuccessStatusCode) 
+            if(ipAddress.IsSuccessStatusCode)
             {
                 var json = await ipAddress.Content.ReadAsStringAsync();
                 return json.ToString();
