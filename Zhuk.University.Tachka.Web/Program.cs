@@ -28,21 +28,21 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 
 
 builder.Services.AddAuthentication()
-    .AddMicrosoftAccount(microsoftOptions =>
-    {
-        microsoftOptions.ClientId = builder.Configuration["WEBSITE_AUTH_MICROSOFT_CONSUMER_KEY"];
-        microsoftOptions.ClientSecret = builder.Configuration["WEBSITE_AUTH_MICROSOFT_CONSUMER_SECRET"];
-    })
+    //.AddMicrosoftAccount(microsoftOptions =>
+    //{
+    //    microsoftOptions.ClientId = builder.Configuration["WEBSITE_AUTH_MICROSOFT_CONSUMER_KEY"];
+    //    microsoftOptions.ClientSecret = builder.Configuration["WEBSITE_AUTH_MICROSOFT_CONSUMER_SECRET"];
+    //})
     .AddGoogle(googleOptions =>
      {
-         googleOptions.ClientId = "603914607095-t71mb999anej3su5in904sr3a1l2pbmt.apps.googleusercontent.com";
-         googleOptions.ClientSecret = "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";
-     })
-    .AddTwitter(twitterOptions =>
-    {
-        twitterOptions.ConsumerKey = builder.Configuration["Authentication:Twitter:ConsumerAPIKey"];
-        twitterOptions.ConsumerSecret = builder.Configuration["Authentication:Twitter:ConsumerSecret"];
-    });
+         googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+         googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+     });
+    //.AddTwitter(twitterOptions =>
+    //{
+    //    twitterOptions.ConsumerKey = builder.Configuration["Authentication:Twitter:ConsumerAPIKey"];
+    //    twitterOptions.ConsumerSecret = builder.Configuration["Authentication:Twitter:ConsumerSecret"];
+    //});
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
