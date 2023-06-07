@@ -60,7 +60,7 @@ Than (if you have App Services) add line of your connection string to applicatio
 
 ### 3. API
 * 🔳/✅ User Avatar
-* 🔳 Controller
+* ✅ Controller
 
 ### 4. Authorization
 * ✅ Create Login and Register Pages
