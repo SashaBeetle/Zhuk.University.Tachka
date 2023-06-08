@@ -59,8 +59,11 @@ Than (if you have App Services) add line of your connection string to applicatio
 * ✅ Create Schemas for objects
 
 ### 3. API
-* 🔳/✅ User Avatar
-* ✅ Controller
+* 🔳/✅ User Avatar API
+* 🔳 User Avatar API Controller
+* ✅ User Location API
+* ✅ User Location API Controller
+
 
 ### 4. Authorization
 * ✅ Create Login and Register Pages
