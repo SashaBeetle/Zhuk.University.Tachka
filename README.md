@@ -75,6 +75,7 @@ Than (if you have App Services) add line of your connection string to applicatio
 * ✅ Controllers
 * ✅ Inividual Pages
 * 🔳 Features
+* 🔳 Tracker
 
 ### 6. Suggestion(Algorithm)
 * ✅ Page
