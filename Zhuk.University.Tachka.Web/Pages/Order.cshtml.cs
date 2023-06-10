@@ -11,7 +11,6 @@ namespace Zhuk.University.Tachka.Web.Pages
     public class OrderModel : PageModel
     {
         public Car Car { get; private set; }
-        public IList<Car> Cars { get; private set; }
 
 
 
@@ -24,6 +23,8 @@ namespace Zhuk.University.Tachka.Web.Pages
         public async Task OnGet(int id)
         {
             Car = await _carService.GetById(id);
+            Car.Rating = Car.Rating + 0.1f;
+            await _carService.Update(Car);
         }
 
     }
