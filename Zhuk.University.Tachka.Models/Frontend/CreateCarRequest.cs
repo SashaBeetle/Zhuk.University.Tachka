@@ -12,5 +12,12 @@ namespace Zhuk.University.Tachka.Models.Frontend
         public string? Model { get; set; }
         [Required]
         public decimal? Price { get; set; }
+        [Required]
+        public string? Description { get; set; }
+        [Required]
+        public string? Color { get; set; }
+        [Required]
+        public string? Year { get; set; }
+
     }
 }
