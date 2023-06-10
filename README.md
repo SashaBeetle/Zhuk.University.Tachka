@@ -81,23 +81,23 @@ Than (if you have App Services) add line of your connection string to applicatio
 * 🔳 Controller
 * 🔳 Filter
 
-### 6. Loggs
+### 7. Loggs
 * 🔳 Add logs for Authorization
 * 🔳 Add logs for Orders
 * 🔳 Add logs for User Profile
 
-### 7. Test
+### 8. Test
 * 🔳 Test Authorization
 * 🔳 Test Orders
 * 🔳 Test User Profile
 
-### 8. Azure
+### 9. Azure
 * ✅ Deploy the project
 * ✅ Connect Application Insights
 * ✅ Connect Azure Database
 * ✅ CI/CD
 
-### 9. Git
+### 10. Git
 * ✅ Add README on GIT
 * ✅ CI/CD
 
