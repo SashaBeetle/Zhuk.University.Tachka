@@ -53,7 +53,8 @@ namespace Zhuk.University.Tachka.Web.Pages
                 Model = Car?.Model,
                 Price = Car?.Price,
                 PlacementTime = DateWithoutTime,
-                PlacementCity = city
+                PlacementCity = city,
+                Rating = 0
             });  
             return new RedirectToPageResult("/Carlist");
         }
