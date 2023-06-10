@@ -72,9 +72,14 @@ Than (if you have App Services) add line of your connection string to applicatio
 * ✅ Create Models
 
 ### 5. Order
-* 🔳 Controllers
-* 🔳 Pages
+* ✅ Controllers
+* ✅ Inividual Pages
 * 🔳 Features
+
+### 6. Suggestion(Algorithm)
+* ✅ Page
+* 🔳 Controller
+* 🔳 Filter
 
 ### 6. Loggs
 * 🔳 Add logs for Authorization
