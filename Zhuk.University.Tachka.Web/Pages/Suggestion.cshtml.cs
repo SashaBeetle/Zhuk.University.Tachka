@@ -12,6 +12,8 @@ namespace Zhuk.University.Tachka.Web.Pages
     {
         public IList<Car> Cars { get; private set; }
         public List<Car> cityCars { get; private set; }
+        public List<Car> topCars { get; private set; }
+
 
 
         private readonly IDbEntityService<Car> _carService;
@@ -35,10 +37,11 @@ namespace Zhuk.University.Tachka.Web.Pages
         {
             var city = "Zolochiv";
 
-            Cars = await _carService.GetAll().ToListAsync();
+            Cars = await _carService.GetAll().OrderByDescending(c => c.Rating).ToListAsync();
             cityCars = Cars.Where(c => c.PlacementCity == city)
                    .OrderByDescending(c => c.Rating)
                    .ToList();
+            topCars = Cars.Take(9).ToList();
         }
     }
 }
