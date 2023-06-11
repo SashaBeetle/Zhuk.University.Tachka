@@ -10,20 +10,25 @@ namespace Zhuk.University.Tachka.Web.Pages
     public class OrderModel : PageModel
     {
         public Car Car { get; private set; }
-        
+
+        private readonly ILogger<OrderModel> _logger;
+
 
         private readonly IDbEntityService<Car> _carService;
 
 
-        public OrderModel(IDbEntityService<Car> carService, IDbEntityService<Order> orderService)
+        public OrderModel(IDbEntityService<Car> carService, ILogger<OrderModel> logger)
         {
             _carService = carService;
+            _logger = logger;
         }
         public async Task OnGet(int id)
         {
             Car = await _carService.GetById(id);
             Car.Rating = Car.Rating + 0.1f;
+            _logger.LogTrace($"Added Rating for Car id={id}");
             await _carService.Update(Car);
+            _logger.LogTrace("Updated DataBase(Car) in Order");
         }
        
     }

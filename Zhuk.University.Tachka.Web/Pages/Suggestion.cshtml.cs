@@ -15,14 +15,15 @@ namespace Zhuk.University.Tachka.Web.Pages
         public List<Car> topCars { get; private set; }
 
 
-
+        private readonly ILogger _logger;
         private readonly IDbEntityService<Car> _carService;
         //private LocationHelper LocHelper = new LocationHelper();
 
 
-        public SuggestionModel(IDbEntityService<Car> carService)
+        public SuggestionModel(IDbEntityService<Car> carService, ILogger logger)
         {
             _carService = carService;
+            _logger = logger;
         }
         //public async void OnGet()
         //{
@@ -36,12 +37,16 @@ namespace Zhuk.University.Tachka.Web.Pages
         public async Task OnGetAsync()
         {
             var city = "Zolochiv";
+                _logger.LogInformation($"Parsed API Json, get city = {city}");
 
             Cars = await _carService.GetAll().OrderByDescending(c => c.Rating).ToListAsync();
             cityCars = Cars.Where(c => c.PlacementCity == city)
                    .OrderByDescending(c => c.Rating)
                    .ToList();
+                        _logger.LogTrace("Sorting Cars in Suggestion");
+
             topCars = Cars.Take(9).ToList();
+
         }
     }
 }

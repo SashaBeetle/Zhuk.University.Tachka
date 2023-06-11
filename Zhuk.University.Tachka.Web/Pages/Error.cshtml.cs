@@ -21,6 +21,7 @@ namespace Zhuk.University.Tachka.Web.Pages
 
         public void OnGet()
         {
+            _logger.LogWarning("Open Error page");
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
         }
     }

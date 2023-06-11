@@ -19,14 +19,17 @@ namespace Zhuk.University.Tachka.Web.Pages
 
 
         private readonly IDbEntityService<Car> _carService;
+        private readonly ILogger<CarlistModel> _logger;
 
-        public CarlistModel(IDbEntityService<Car> carService) 
+        public CarlistModel(IDbEntityService<Car> carService, ILogger<CarlistModel> logger) 
         {
-           _carService = carService; 
+           _carService = carService;
+            _logger = logger;
         }
         public async Task OnGet()
         {
             Cars = await _carService.GetAll().ToListAsync();
+            _logger.LogTrace("Display of all Cars on the screen");
         }
     }
 }

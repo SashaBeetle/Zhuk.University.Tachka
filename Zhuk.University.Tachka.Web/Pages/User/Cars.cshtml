@@ -1,6 +1,8 @@
 ﻿@page
 @model Zhuk.University.Tachka.Web.Pages.User.UserCarsModel
 @{
+    ViewData["Title"] = "User Cars";
+
 }
 
 <div class="container px-4 py-5" id="custom-cards">
@@ -16,7 +18,7 @@
                                     <button type="submit" class="btn btn-danger">Remove</button>
                                 </form>
                                 <a asp-page="/Order" asp-route-id="@el.Id" class="text-right">
-                                    <button type="button" class="btn btn-outline-danger">Order</button>
+                                    <button type="button" class="btn btn-outline-danger">About</button>
                                 </a>
                             </div>
                             <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">@el.Model @el.Name</h3>
