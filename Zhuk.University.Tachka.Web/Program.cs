@@ -20,7 +20,7 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<ZhukUniversityTachkaWebContext>(options => 
 
     options
-    
+    .UseLazyLoadingProxies()
     .UseSqlServer(builder.Configuration.GetConnectionString("ZhukUniversityTachkaWebContext") ?? throw new InvalidOperationException("Connection string 'ZhukUniversityTachkaWebContext' not found.")));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();

@@ -15,5 +15,6 @@ namespace Zhuk.University.Tachka.Web.Data
         }
 
         public DbSet<Zhuk.University.Tachka.Models.Database.Car> Car { get; set; } = default!;
+        public DbSet<Zhuk.University.Tachka.Models.Database.Order> Order { get; set; } = default!;
     }
 }
