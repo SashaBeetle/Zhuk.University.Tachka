@@ -79,7 +79,7 @@ Than (if you have App Services) add line of your connection string to applicatio
 
 ### 6. Suggestion(Algorithm)
 * ✅ Page
-* 🔳 Controller
+* ✅ Controller
 * 🔳 Filter
 
 ### 7. Loggs
