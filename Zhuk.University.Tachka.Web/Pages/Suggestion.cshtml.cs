@@ -36,7 +36,9 @@ namespace Zhuk.University.Tachka.Web.Pages
             var city = "Zolochiv";
 
             Cars = await _carService.GetAll().ToListAsync();
-            cityCars = Cars.Where(c => c.PlacementCity == city).ToList();
+            cityCars = Cars.Where(c => c.PlacementCity == city)
+                   .OrderByDescending(c => c.Rating)
+                   .ToList();
         }
     }
 }
