@@ -7,6 +7,7 @@ namespace Zhuk.University.Tachka.Database
     public class TachkaDbContext : IdentityDbContext
     {
         public DbSet<Car> Cars { get; set; }
+        public DbSet<Photo> Photos { get; set; }
         public TachkaDbContext() { }
         public TachkaDbContext(DbContextOptions<TachkaDbContext> options) : base(options) { }
 

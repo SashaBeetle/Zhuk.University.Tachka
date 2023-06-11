@@ -16,5 +16,7 @@ namespace Zhuk.University.Tachka.Models.Database
         public string? PlacementTime { get; set; }
         public string? PlacementCity { get; set; }
         public float? Rating { get; set; }
+        // Зв'язок один до багатьох з таблицею "Фотографії"
+        public virtual ICollection<Photo> Photos { get; set; }
     }
 }

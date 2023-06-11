@@ -7,7 +7,7 @@
 <h1>Create Car</h1>
 
 <div class="container-fluid">
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <div class="row mb-3">
             <div class ="col-2 px-2">
                 <label asp-for="Car.Model"></label>
@@ -72,6 +72,19 @@
                 @Html.ValidationMessage("Car.Description")
             </div>
         </div>
+
+        <div class="row mb-3">
+            <div class="col-2 px-2">
+                <label asp-for="Car.Photos"></label>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <input type="file" class="form-control-file" id="photos" name="photos" multiple>
+                </div>
+              @Html.ValidationMessage("Car.Photos")
+            </div>
+        </div>
+                
         <div class="row mt-4 mb-2">
             <div class="col-3">
                 <input type="submit" class="w-100 form-control" />
@@ -79,3 +92,4 @@
         </div>
     </form>
 </div>
+

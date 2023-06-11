@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-
+using Zhuk.University.Tachka.Models.Database;
 
 namespace Zhuk.University.Tachka.Models.Frontend
 {
@@ -18,6 +18,7 @@ namespace Zhuk.University.Tachka.Models.Frontend
         public string? Color { get; set; }
         [Required]
         public string? Year { get; set; }
-
+        [Required]
+        public virtual ICollection<Photo> Photos { get; set; }
     }
 }
