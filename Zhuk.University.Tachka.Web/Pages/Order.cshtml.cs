@@ -15,13 +15,11 @@ namespace Zhuk.University.Tachka.Web.Pages
 
 
         private readonly IDbEntityService<Car> _carService;
-        private readonly IDbEntityService<Order> _orderService;
 
 
         public OrderModel(IDbEntityService<Car> carService, IDbEntityService<Order> orderService)
         {
             _carService = carService;
-            _orderService = orderService;
         }
         public async Task OnGet(int id)
         {
