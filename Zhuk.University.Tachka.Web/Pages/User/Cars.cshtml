@@ -1,0 +1,47 @@
+﻿@page
+@model Zhuk.University.Tachka.Web.Pages.User.UserCarsModel
+@{
+}
+
+<div class="container px-4 py-5" id="custom-cards">
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        @{
+            foreach (var el in Model.Cars)
+            {
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow" style="background-image: url('https://sneg.top/uploads/posts/2023-03/1678773164_sneg-top-p-fon-mersedes-znachok-krasivo-1.jpg'); background-size: cover">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <div class="d-flex justify-content-between">
+                                <form method="post" asp-page-handler="Delete" asp-route-id="@el.Id">
+                                    <button type="submit" class="btn btn-danger">Remove</button>
+                                </form>
+                                <a asp-page="/Order" asp-route-id="@el.Id" class="text-right">
+                                    <button type="button" class="btn btn-outline-danger">Order</button>
+                                </a>
+                            </div>
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">@el.Model @el.Name</h3>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://xsgames.co/randomusers/avatar.php?g=male" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                                    <small class="nowrap">@el.Price₴</small>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                                    <small>@el.PlacementCity</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                                    <small>@el.PlacementTime</small>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

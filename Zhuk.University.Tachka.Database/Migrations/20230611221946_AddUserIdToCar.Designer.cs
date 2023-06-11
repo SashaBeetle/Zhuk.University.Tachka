@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Zhuk.University.Tachka.Database;
 
@@ -11,9 +12,11 @@ using Zhuk.University.Tachka.Database;
 namespace Zhuk.University.Tachka.Database.Migrations
 {
     [DbContext(typeof(TachkaDbContext))]
-    partial class TachkaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230611221946_AddUserIdToCar")]
+    partial class AddUserIdToCar
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

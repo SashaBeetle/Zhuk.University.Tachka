@@ -2,3 +2,99 @@
 @model Zhuk.University.Tachka.Web.Pages.Orders.OrdersModel
 @{
 }
+<h2 class="text-center mt-5">You Orders</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].CarId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].EndDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.UserOrders)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@item.Id">
+                        <button type="submit" class="btn btn-danger">Remove</button>
+                    </form>
+                </td>
+            </tr>
+      
+        }
+    </tbody>
+</table>
+<h2 class="text-center mt-5">Other Orders</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].CarId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].EndDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Orders)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

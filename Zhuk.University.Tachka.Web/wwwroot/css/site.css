@@ -32,3 +32,6 @@ body {
 .custom-link {
     text-decoration: none;
 }
+.form-control {
+    width: 50%;
+}
