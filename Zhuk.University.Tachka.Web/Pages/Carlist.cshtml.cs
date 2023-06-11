@@ -17,6 +17,7 @@ namespace Zhuk.University.Tachka.Web.Pages
     {
         public IList<Car> Cars { get; private set; }
 
+
         private readonly IDbEntityService<Car> _carService;
 
         public CarlistModel(IDbEntityService<Car> carService) 

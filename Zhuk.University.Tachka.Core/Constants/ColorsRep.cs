@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Zhuk.University.Tachka.Core.Constants
 {
-    public class Colors
+    public static class ColorsRep
     {
-        public string[] colors =
+        public static IEnumerable<string> GetAllColors()
         {
+            return new List<string>()
+            {
             "White",
             "Black",
             "Red",
@@ -20,7 +22,8 @@ namespace Zhuk.University.Tachka.Core.Constants
             "Purple",
             "Gray",
             "Brown"
-        };
-        
+            };
+        }
+       
     }
 }
