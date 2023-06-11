@@ -1,4 +1,11 @@
 ﻿@page
-@model Zhuk.University.Tachka.Web.Pages.AvatarModel
+@model AvatarModel
 @{
 }
+<form method="post" enctype="multipart/form-data" asp-page-handler="UploadAvatar">
+    <div class="form-group">
+        <label for="avatarFile">Виберіть аватар:</label>
+        <input type="file" class="form-control-file" id="avatarFile" name="AvatarFile">
+    </div>
+    <button type="submit" class="btn btn-primary">Завантажити</button>
+</form>

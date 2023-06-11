@@ -26,7 +26,7 @@ builder.Services.AddDbContext<ZhukUniversityTachkaWebContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<TachkaDbContext>();
+    .AddEntityFrameworkStores<TachkaDbContext>().AddDefaultTokenProviders();
 
 
 //builder.Services.AddAuthentication()
