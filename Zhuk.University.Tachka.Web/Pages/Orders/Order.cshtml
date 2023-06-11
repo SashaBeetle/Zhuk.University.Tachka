@@ -2,18 +2,30 @@
 @model Zhuk.University.Tachka.Web.Pages.Orders.OrderModel
 @{
 }
-<form method="POST" enctype="multipart/form-data">
-    <!-- Решта полів форми -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.js"></script>
 
-    <div class="form-group">
-        <label for="startDate">Start Date:</label>
-        <input type="date" class="form-control" id="startDate" name="startDate" required>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="POST" enctype="multipart/form-data">
+                <!-- Решта полів форми -->
+
+                <div class="form-group">
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" class="form-control " id="startDate" name="startDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="endDate">End Date:</label>
+                    <input type="date" class="form-control " id="endDate" name="endDate" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </div>
+</div>
 
-    <div class="form-group">
-        <label for="endDate">End Date:</label>
-        <input type="date" class="form-control" id="endDate" name="endDate" required>
-    </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+

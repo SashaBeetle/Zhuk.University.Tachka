@@ -8,7 +8,6 @@ namespace Zhuk.University.Tachka.Web.Pages.Orders
     public class OrderModel : PageModel
     {
         public Car Car { get; private set; }
-        public int ID { get; set;}
 
 
         private readonly IDbEntityService<Car> _carService;
@@ -26,13 +25,18 @@ namespace Zhuk.University.Tachka.Web.Pages.Orders
         }
         public async Task<IActionResult> OnPost(int id, DateTime startDate, DateTime endDate)
         {
-   
-           
-            // Створення нового об'єкта CarBooking
+            DateTime today = DateTime.Today;
+            if (startDate < today)
+            {
+                return new RedirectToPageResult("/Error");
+            }
+
+            
+
             await _orderService.Create(new Order()
             {
                 CarId = id,
-                UserId = User.Identity.Name, // або отримайте ID користувача з контексту авторизації
+                UserId = User.Identity.Name, // Name користувача з контексту авторизації
                 StartDate = startDate,
                 EndDate = endDate
             });

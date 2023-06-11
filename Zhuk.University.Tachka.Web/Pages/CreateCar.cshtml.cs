@@ -93,7 +93,8 @@ namespace Zhuk.University.Tachka.Web.Pages
                 PlacementTime = DateWithoutTime,
                 PlacementCity = city,
                 Rating = 0,
-                Photos = photoIds.Select(id => new Photo { Id = id }).ToList()
+                UserId = User.Identity.Name
+                //Photos = photoIds.Select(id => new Photo { Id = id }).ToList()
             });
 
             return new RedirectToPageResult("/Carlist");

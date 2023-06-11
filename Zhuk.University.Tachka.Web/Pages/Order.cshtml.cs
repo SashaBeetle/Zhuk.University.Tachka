@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Zhuk.University.Tachka.Database.Interfaces;
 using Zhuk.University.Tachka.Models.Database;
-using Zhuk.University.Tachka.Web.Controllers;
 
 namespace Zhuk.University.Tachka.Web.Pages
 {
@@ -12,7 +11,6 @@ namespace Zhuk.University.Tachka.Web.Pages
     {
         public Car Car { get; private set; }
         
-
 
         private readonly IDbEntityService<Car> _carService;
 
