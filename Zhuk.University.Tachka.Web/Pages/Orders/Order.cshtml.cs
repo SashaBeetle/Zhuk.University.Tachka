@@ -1,17 +1,14 @@
-using Blazorise;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using Zhuk.University.Tachka.Database.Interfaces;
 using Zhuk.University.Tachka.Models.Database;
-using Zhuk.University.Tachka.Web.Controllers;
 
-namespace Zhuk.University.Tachka.Web.Pages
+namespace Zhuk.University.Tachka.Web.Pages.Orders
 {
     public class OrderModel : PageModel
     {
         public Car Car { get; private set; }
-        
+
 
 
         private readonly IDbEntityService<Car> _carService;
@@ -26,9 +23,22 @@ namespace Zhuk.University.Tachka.Web.Pages
         public async Task OnGet(int id)
         {
             Car = await _carService.GetById(id);
-            Car.Rating = Car.Rating + 0.1f;
-            await _carService.Update(Car);
+           
         }
-       
+        public async Task<IActionResult> OnPost( DateTime startDate, DateTime endDate)
+        {
+   
+           
+            // Створення нового об'єкта CarBooking
+            await _orderService.Create(new Order()
+            {
+                CarId = 14,
+                UserId = User.Identity.Name, // або отримайте ID користувача з контексту авторизації
+                StartDate = startDate,
+                EndDate = endDate
+            });
+
+            return new RedirectToPageResult("/Index");
+        }
     }
 }

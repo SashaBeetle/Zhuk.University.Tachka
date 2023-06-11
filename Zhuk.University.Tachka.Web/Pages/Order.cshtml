@@ -32,41 +32,52 @@
     </div>
     <div class="row">
         <div class="col-sm-3">
+            <a class="custom-link" asp-page="/Orders/Order" asp-route-id="@Model.Car.Id">
             <div class="d-flex flex-column h-100">
                 <div class="alert alert-warning flex-grow-1" role="alert">
                     <h3 style="text-align: center;">Price for day:</h3>
                     <p class="mb-0" style="text-align: center;">@Model.Car.Price₴</p>
                 </div>
             </div>
+        </a>
         </div>
         <div class="col-sm-3">
+            <a class="custom-link" asp-page="/Orders/Order" asp-route-id="@Model.Car.Id">
             <div class="d-flex flex-column h-100">
                 <div class="alert alert-warning flex-grow-1" role="alert">
                     <h3 style="text-align: center;">Price for week:</h3>
                     <p class="mb-0" style="text-align: center;">@week ₴</p>
                 </div>
             </div>
+        </a>
         </div>
-        <div class="col-sm-3">
-            <div class="d-flex flex-column h-100">
-                <div class="alert alert-warning flex-grow-1" role="alert">
-                    <h3 style="text-align: center;">Price for month:</h3>
-                    <p class="mb-0" style="text-align: center;">@month ₴</p>
+            <div class="col-sm-3">
+            <a class="custom-link"  asp-page="/Orders/Order" asp-route-id="@Model.Car.Id">
+                <div class="d-flex flex-column h-100">
+                    <div class="alert alert-warning flex-grow-1" role="alert">
+                        <h3 style="text-align: center;">Price for month:</h3>
+                        <p class="mb-0" style="text-align: center;">@month ₴</p>
+                    </div>
                 </div>
+            </a>
             </div>
-        </div>
         <div class="col-sm-3">
-            <div class="d-flex flex-column h-100">
-                <div class="alert alert-warning flex-grow-1" role="alert">
-                    <h4 style="text-align: center;">Special Offer for year:</h4>
-                    <p class="mb-0" style="text-align: center;">
-                        <del>@year ₴</del><br>
-                        @spec ₴
-                    </p>
+            <a class="custom-link" asp-page="/Orders/Order" asp-route-id="@Model.Car.Id">
+                <div class="d-flex flex-column h-100">
+                    <div class="alert alert-warning flex-grow-1" role="alert" style="user-select: none;">
+                        <h4 style="text-align: center;">Special Offer for year:</h4>
+                        <p class="mb-0" style="text-align: center;user-select: none;">
+                            <del>@year ₴</del><br>
+                            @spec ₴
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </a>
+
+            
         </div>
     </div>
 
+    
 
 </div>
