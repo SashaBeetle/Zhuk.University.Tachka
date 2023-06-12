@@ -15,12 +15,12 @@ namespace Zhuk.University.Tachka.Web.Pages
         public List<Car> topCars { get; private set; }
 
 
-        private readonly ILogger _logger;
+        private readonly ILogger<SuggestionModel> _logger;
         private readonly IDbEntityService<Car> _carService;
         //private LocationHelper LocHelper = new LocationHelper();
 
 
-        public SuggestionModel(IDbEntityService<Car> carService, ILogger logger)
+        public SuggestionModel(IDbEntityService<Car> carService, ILogger<SuggestionModel> logger)
         {
             _carService = carService;
             _logger = logger;
