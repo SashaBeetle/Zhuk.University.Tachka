@@ -11,8 +11,8 @@
             foreach (var el in Model.Cars)
             {
                 <div class="col">
-                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow" style="background-image: url('@el.Photo'); background-size: cover">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow" style="background-image: url('@el.Photo'); background-size: cover">
+                                <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
                             <div class="d-flex justify-content-between">
                                 <form method="post" asp-page-handler="Delete" asp-route-id="@el.Id">
                                     <button type="submit" class="btn btn-danger">Remove</button>
