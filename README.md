@@ -102,6 +102,10 @@ Than (if you have App Services) add line of your connection string to applicatio
 * ✅ Add README on GIT
 * ✅ CI/CD
 
+# Presentation of the project
+- [Architects' diagram](https://lucid.app/lucidchart/4ebd444d-e833-412f-94ab-8dc3d804af62/edit?viewport_loc=-32%2C-9%2C2115%2C1139%2CwWx6J-GdM1Zc&invitationId=inv_7b2b7cd5-47c8-4788-9510-f27e2be5d53a)
+- [Diagram of infrastructure used](https://lucid.app/lucidchart/4ebd444d-e833-412f-94ab-8dc3d804af62/edit?viewport_loc=159%2C225%2C1906%2C1027%2CQzx6eZss7Cns&invitationId=inv_7b2b7cd5-47c8-4788-9510-f27e2be5d53a)
+
 # 📒 Lab 3 
 - Task: I introduce a new feature on the website - Dark Mode. This feature will enable users to switch the website's interface to a darker color scheme that is easier on the eyes in low light environments.
 - Name: Vitalii Synytskyi
