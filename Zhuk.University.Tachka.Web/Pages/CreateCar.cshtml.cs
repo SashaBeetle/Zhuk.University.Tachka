@@ -1,9 +1,11 @@
+using Blazorise;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Collections.Generic;
 using System.Data;
 using System.Runtime.InteropServices.JavaScript;
@@ -42,6 +44,10 @@ namespace Zhuk.University.Tachka.Web.Pages
             Years = YearHelper.GetYearsList().ToList();
         }
 
+        [HttpPost]
+        [SwaggerOperation(Summary = "Create a new car", Tags = new[] { "Cars" })]
+        [ProducesResponseType(typeof(void), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(void), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> OnPost(List<IFormFile> photos)
         {
 
