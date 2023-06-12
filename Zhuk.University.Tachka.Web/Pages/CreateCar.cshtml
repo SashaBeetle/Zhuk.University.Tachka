@@ -75,13 +75,11 @@
 
         <div class="row mb-3">
             <div class="col-2 px-2">
-                <label asp-for="Car.Photos"></label>
+                <label asp-for="Car.Photo"></label>
             </div>
             <div class="col-6">
-                <div class="form-group">
-                    <input type="file" class="form-control-file" id="photos" name="photos" multiple>
-                </div>
-              @Html.ValidationMessage("Car.Photos")
+                <input asp-for="Car.Photo" class="w-100 form-control" placeholder="https://Example.com.ua/assets/cache/images/BMV/x5/IMG.jpg" onfocus="this.placeholder=''" onblur="this.placeholder='https://Example.com.ua/assets/cache/images/BMV/x5/IMG.jpg'" />
+                @Html.ValidationMessage("Car.Model")
             </div>
         </div>
                 

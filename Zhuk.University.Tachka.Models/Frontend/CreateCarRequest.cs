@@ -19,7 +19,7 @@ namespace Zhuk.University.Tachka.Models.Frontend
         [Required]
         public string? Year { get; set; }
         [Required]
-        public virtual ICollection<Photo> Photos { get; set; }
+        public string? Photo { get; set; }
         [Required]
         public string UserId { get; set; }
 

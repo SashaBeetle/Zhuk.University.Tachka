@@ -6,11 +6,29 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Zhuk.University.Tachka.Database.Migrations
 {
     /// <inheritdoc />
-    public partial class Order : Migration
+    public partial class FinalMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AddColumn<string>(
+                name: "Avatar",
+                table: "AspNetUsers",
+                nullable: true);
+
+            migrationBuilder.AddColumn<string>(
+                name: "Photo",
+                table: "Cars",
+                type: "nvarchar(max)",
+                nullable: true);
+
+            migrationBuilder.AddColumn<string>(
+                name: "UserId",
+                table: "Cars",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "");
+
             migrationBuilder.CreateTable(
                 name: "Orders",
                 columns: table => new
@@ -33,6 +51,18 @@ namespace Zhuk.University.Tachka.Database.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Photos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Photos", x => x.Id);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_CarId",
                 table: "Orders",
@@ -44,6 +74,17 @@ namespace Zhuk.University.Tachka.Database.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Orders");
+
+            migrationBuilder.DropTable(
+                name: "Photos");
+
+            migrationBuilder.DropColumn(
+                name: "Photo",
+                table: "Cars");
+
+            migrationBuilder.DropColumn(
+                name: "UserId",
+                table: "Cars");
         }
     }
 }
