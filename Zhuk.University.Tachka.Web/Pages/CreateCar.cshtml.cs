@@ -56,7 +56,7 @@ namespace Zhuk.University.Tachka.Web.Pages
             //    return Page();
             //}
 
-            if(Car.Photo == null)
+            if (Car.Photo == null)
             {
                 Car.Photo = "https://cdn.pixabay.com/photo/2018/02/27/16/23/car-3185869_640.png";
             }
