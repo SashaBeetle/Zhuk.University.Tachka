@@ -44,10 +44,6 @@ namespace Zhuk.University.Tachka.Web.Pages
             Years = YearHelper.GetYearsList().ToList();
         }
 
-        [HttpPost]
-        [SwaggerOperation(Summary = "Create a new car", Tags = new[] { "Cars" })]
-        [ProducesResponseType(typeof(void), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(void), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> OnPost(List<IFormFile> photos)
         {
 
