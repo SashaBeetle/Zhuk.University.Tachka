@@ -13,39 +13,20 @@ namespace Zhuk.University.Tachka.Test
         }
 
         [TestMethod]
-        public void LoggerTest1()
+        public void LogMessageTest()
         {
+            _logger.LogInformation("Testing log message.");
 
-            _logger.LogInformation($"Sum func.");
-            var arr = Enumerable.Range(0, 1000).ToArray();
-            var sum = 0;
 
-            try
-            {
-                for (int counter = 0; counter < arr.Length; counter++)
-                {
-                    _logger.LogTrace($"Item with Index = {counter},");
-                    var element = arr[counter];
+            _logger.LogTrace("This is a trace message.");
+            _logger.LogDebug("This is a debug message.");
+            _logger.LogInformation("This is an information message.");
+            _logger.LogWarning("This is a warning message.");
+            _logger.LogError("This is an error message.");
+            _logger.LogCritical("This is a critical message.");
 
-                    if (element % 2 == 0)
-                    {
-                        _logger.LogDebug($"Sum for counter = {counter} and item = {element}");
-                    }
-
-                }
-            }
-            catch (Exception exc)
-            {
-                _logger.LogError(exc, "Error function.");
-            }
-
-            var alt = arr.Sum() + 1;
-            if (alt != sum)
-            {
-                _logger.LogWarning($"Calculated incorrect");
-            }
-            _logger.LogInformation($"Sum function complete.");
         }
+
 
     }
 
