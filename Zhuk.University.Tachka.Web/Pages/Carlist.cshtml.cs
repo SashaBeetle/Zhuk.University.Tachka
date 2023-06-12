@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Blazorise;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Annotations;
 using Zhuk.University.Tachka.Database;
 using Zhuk.University.Tachka.Database.Interfaces;
 using Zhuk.University.Tachka.Models.Database;
@@ -26,6 +28,8 @@ namespace Zhuk.University.Tachka.Web.Pages
            _carService = carService;
             _logger = logger;
         }
+
+     
         public async Task OnGet()
         {
             Cars = await _carService.GetAll().ToListAsync();
