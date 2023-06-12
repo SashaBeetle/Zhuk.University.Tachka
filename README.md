@@ -75,22 +75,22 @@ Than (if you have App Services) add line of your connection string to applicatio
 * ✅ Controllers
 * ✅ Inividual Pages
 * ✅ Features
-* 🔳 Tracker
+* ✅ Tracker
 
 ### 6. Suggestion(Algorithm)
 * ✅ Page
 * ✅ Controller
-* 🔳 Filter
+* ✅ Filter
 
 ### 7. Loggs
-* 🔳 Add logs for Authorization
-* 🔳 Add logs for Orders
-* 🔳 Add logs for User Profile
+* ✅ Add logs for Authorization
+* ✅ Add logs for Orders
+* ✅ Add logs for User Profile
 
 ### 8. Test
-* 🔳 Test Authorization
-* 🔳 Test Orders
-* 🔳 Test User Profile
+* ✅ Test DataBase
+* ✅ Test Cars
+* ✅ Test Loggs
 
 ### 9. Azure
 * ✅ Deploy the project
