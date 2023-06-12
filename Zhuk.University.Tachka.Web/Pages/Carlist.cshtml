@@ -3,7 +3,6 @@
 
 @{
     ViewData["Title"] = "Car List";
-    string url = "https://sneg.top/uploads/posts/2023-03/1678773164_sneg-top-p-fon-mersedes-znachok-krasivo-1.jpg";
 }
 
 <div class="container px-4 py-5" id="custom-cards">
@@ -11,7 +10,7 @@
 @{
     foreach(var el in Model.Cars){
                 <div class="col">
-                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow" style="background-image: url('https://sneg.top/uploads/posts/2023-03/1678773164_sneg-top-p-fon-mersedes-znachok-krasivo-1.jpg'); background-size: cover">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow" style="background-image: url('@el.Photo'); background-size: cover">
                         <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
                             <a asp-page="/Order" asp-route-id="@el.Id" class="text-left">
                                 <button type="button" class="btn btn-outline-danger">Order</button>

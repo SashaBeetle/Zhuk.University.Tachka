@@ -25,7 +25,6 @@ namespace Zhuk.University.Tachka.Web.Pages
         public IEnumerable<string> Colors { get; set; }
         public List<int> Years { get; set; }
         private readonly IDbEntityService<Car> _carService;
-        private readonly TachkaDbContext _dbContext;
 
 
         private LocationHelper LocHelper = new LocationHelper();
@@ -33,10 +32,9 @@ namespace Zhuk.University.Tachka.Web.Pages
         private DateTime date = DateTime.Now;
         
 
-        public CreateCarModel(IDbEntityService<Car> carService, TachkaDbContext dbContext)
+        public CreateCarModel(IDbEntityService<Car> carService)
         {
             _carService = carService;
-            _dbContext = dbContext;
         }
         public void OnGet()
         {
@@ -58,29 +56,7 @@ namespace Zhuk.University.Tachka.Web.Pages
             //    return Page();
             //}
 
-            var photoIds = new List<int>();
-            foreach (var photo in photos)
-            {
-                if (photo == null || photo.Length == 0)
-                {
-                    return BadRequest("No file uploaded");
-                }
-
-                using (var memoryStream = new MemoryStream())
-                {
-                    await photo.CopyToAsync(memoryStream);
-                    var newPhoto = new Photo
-                    {
-                        FileName = photo.FileName,
-                        ImageData = memoryStream.ToArray()
-                    };
-
-                    _dbContext.Photos.Add(newPhoto);
-                    await _dbContext.SaveChangesAsync();
-
-                    photoIds.Add(newPhoto.Id);
-                }
-            }
+            
 
             await _carService.Create(new Car()
             {
@@ -93,37 +69,14 @@ namespace Zhuk.University.Tachka.Web.Pages
                 PlacementTime = DateWithoutTime,
                 PlacementCity = city,
                 Rating = 0,
-                UserId = User.Identity.Name
-                //Photos = photoIds.Select(id => new Photo { Id = id }).ToList()
+                UserId = User.Identity.Name,
+                Photo = Car?.Photo
             });
 
             return new RedirectToPageResult("/Carlist");
         }
 
-        [HttpPost("upload")]
-        public async Task<IActionResult> UploadPhoto(IFormFile file)
-        {
-            if (file == null || file.Length == 0)
-            {
-                return BadRequest("No file uploaded");
-            }
-
-            using (var memoryStream = new MemoryStream())
-            {
-                await file.CopyToAsync(memoryStream);
-                var photo = new Photo
-                {
-                    FileName = file.FileName,
-                    ImageData = memoryStream.ToArray()
-                };
-
-                // Додати фотографію до контексту БД (використовуйте ваш контекст БД)
-                _dbContext.Photos.Add(photo);
-                await _dbContext.SaveChangesAsync();
-
-                return StatusCode(200, "Photo uploaded successfully");
-            }
-        }
+       
     }
 
 }

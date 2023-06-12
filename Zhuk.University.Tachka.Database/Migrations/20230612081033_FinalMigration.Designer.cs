@@ -12,8 +12,8 @@ using Zhuk.University.Tachka.Database;
 namespace Zhuk.University.Tachka.Database.Migrations
 {
     [DbContext(typeof(TachkaDbContext))]
-    [Migration("20230611180337_Order")]
-    partial class Order
+    [Migration("20230612081033_FinalMigration")]
+    partial class FinalMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -246,6 +246,9 @@ namespace Zhuk.University.Tachka.Database.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Photo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PlacementCity")
                         .HasColumnType("nvarchar(max)");
 
@@ -257,6 +260,10 @@ namespace Zhuk.University.Tachka.Database.Migrations
 
                     b.Property<float?>("Rating")
                         .HasColumnType("real");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Year")
                         .HasColumnType("nvarchar(max)");
@@ -302,20 +309,7 @@ namespace Zhuk.University.Tachka.Database.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CarId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("FileName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte[]>("ImageData")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("CarId");
 
                     b.ToTable("Photos");
                 });
@@ -380,22 +374,6 @@ namespace Zhuk.University.Tachka.Database.Migrations
                         .IsRequired();
 
                     b.Navigation("Car");
-                });
-
-            modelBuilder.Entity("Zhuk.University.Tachka.Models.Database.Photo", b =>
-                {
-                    b.HasOne("Zhuk.University.Tachka.Models.Database.Car", "Car")
-                        .WithMany("Photos")
-                        .HasForeignKey("CarId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Car");
-                });
-
-            modelBuilder.Entity("Zhuk.University.Tachka.Models.Database.Car", b =>
-                {
-                    b.Navigation("Photos");
                 });
 #pragma warning restore 612, 618
         }
