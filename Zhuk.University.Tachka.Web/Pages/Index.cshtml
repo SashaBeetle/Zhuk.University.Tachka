@@ -14,22 +14,22 @@
                             <a asp-page="/Order" asp-route-id="@el.Id" class="text-left">
                                 <button type="button" class="btn btn-outline-danger">Order</button>
                             </a>
-                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">@el.Model @el.Name</h3>
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold custom-text">@el.Model @el.Name</h3>
                             <ul class="d-flex list-unstyled mt-auto">
                                 <li class="me-auto">
                                     <img src="https://xsgames.co/randomusers/avatar.php?g=male" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
                                 </li>
                                 <li class="d-flex align-items-center me-3">
                                     <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                                    <small class="nowrap">@el.Price₴</small>
+                                    <small class="custom-text">@el.Price₴</small>
                                 </li>
                                 <li class="d-flex align-items-center me-3">
                                     <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                                    <small>@el.PlacementCity</small>
+                                    <small class="custom-text">@el.PlacementCity</small>
                                 </li>
                                 <li class="d-flex align-items-center">
                                     <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                                    <small>@el.PlacementTime</small>
+                                    <small class="custom-text">@el.PlacementTime</small>
                                 </li>
                             </ul>
                         </div>

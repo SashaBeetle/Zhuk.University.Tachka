@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Logging;
 using Newtonsoft.Json.Linq;
 using Zhuk.University.Tachka.Database.Helpers;
 using Zhuk.University.Tachka.Database.Interfaces;
@@ -17,7 +18,7 @@ namespace Zhuk.University.Tachka.Web.Pages
 
         private readonly ILogger<SuggestionModel> _logger;
         private readonly IDbEntityService<Car> _carService;
-        //private LocationHelper LocHelper = new LocationHelper();
+        private LocationHelper LocHelper = new LocationHelper();
 
 
         public SuggestionModel(IDbEntityService<Car> carService, ILogger<SuggestionModel> logger)
@@ -25,19 +26,13 @@ namespace Zhuk.University.Tachka.Web.Pages
             _carService = carService;
             _logger = logger;
         }
-        //public async void OnGet()
-        //{
-        //    //var result = await LocHelper.GetGeoInfo();
-        //    //var JObj = JObject.Parse(result);
-        //    var city = "Zolochiv";
-
-        //    Cars = await _carService.GetAll().ToListAsync();
-        //    cityCars = Cars.Where(c => c.PlacementCity == city).ToList();
-        //}
+     
         public async Task OnGetAsync()
         {
-            var city = "Zolochiv";
-                _logger.LogInformation($"Parsed API Json, get city = {city}");
+            var result = await LocHelper.GetGeoInfo();
+            var JObj = JObject.Parse(result);
+            var city = (string)JObj["city"];
+            _logger.LogInformation($"Parsed API Json, get city = {city}");
 
             Cars = await _carService.GetAll().OrderByDescending(c => c.Rating).ToListAsync();
             cityCars = Cars.Where(c => c.PlacementCity == city)
