@@ -15,8 +15,11 @@
             <img src="@Model.Car.Photo" alt="Vehicle" class="car-image">
         </div>
         <div class="col-md-6">
+            <h2>User:</h2>
+            <p>@Model.Car.UserId</p>
+
             <h2>Brand and model:</h2>
-            <p style="font-size: 1rem;">@Model.Car.Name @Model.Car.Model</p>
+            <p>@Model.Car.Name @Model.Car.Model</p>
 
             <h2>Year of release:</h2>
             <p>@Model.Car.Year</p>
