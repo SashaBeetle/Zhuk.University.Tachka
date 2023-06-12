@@ -19,16 +19,20 @@ namespace Zhuk.University.Tachka.Web.Pages
         private Random random = new Random();
         private int NumberOfBoxs = 3;
 
+        private readonly ILogger<IndexModel> _logger;
         private readonly IDbEntityService<Car> _carService;
 
-        public IndexModel(IDbEntityService<Car> carService)
+        public IndexModel(IDbEntityService<Car> carService, ILogger<IndexModel> logger)
         {
             _carService = carService;
+            _logger = logger;
         }
         public async Task OnGet()
         {
+                _logger.LogTrace("Open Home Page");
             Cars = await _carService.GetAll().ToListAsync(); 
             RCars = Cars.OrderBy(x => random.Next()).Take(NumberOfBoxs).ToList();
+                _logger.LogTrace("Sorted Cars in Home Page");
         }
     }
 }
