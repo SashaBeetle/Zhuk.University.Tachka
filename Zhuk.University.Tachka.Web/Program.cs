@@ -7,6 +7,7 @@ using Zhuk.University.Tachka.Web;
 using Microsoft.AspNetCore.Identity;
 using Blazorise;
 using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Authentication.OAuth;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +40,15 @@ builder.Services.AddAuthentication()
      {
          googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
          googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+         googleOptions.Events = new OAuthEvents()
+         {
+             OnRemoteFailure = (context) =>
+             {
+                 context.Response.Redirect(context?.Properties?.GetString("returnUrl"));
+                 context.HandleResponse();
+                 return Task.CompletedTask;
+             }
+         };
      });
 //.AddTwitter(twitterOptions =>
 //{
