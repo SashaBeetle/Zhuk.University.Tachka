@@ -30,26 +30,26 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<TachkaDbContext>().AddDefaultTokenProviders();
 
 
-//builder.Services.AddAuthentication()
-//    //.AddMicrosoftAccount(microsoftOptions =>
-//    //{
-//    //    microsoftOptions.ClientId = builder.Configuration["WEBSITE_AUTH_MICROSOFT_CONSUMER_KEY"];
-//    //    microsoftOptions.ClientSecret = builder.Configuration["WEBSITE_AUTH_MICROSOFT_CONSUMER_SECRET"];
-//    //})
-//    .AddGoogle(googleOptions =>
-//     {
-//         googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
-//         googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
-//         googleOptions.Events = new OAuthEvents()
-//         {
-//             OnRemoteFailure = (context) =>
-//             {
-//                 context.Response.Redirect(context?.Properties?.GetString("returnUrl"));
-//                 context.HandleResponse();
-//                 return Task.CompletedTask;
-//             }
-//         };
-//     });
+builder.Services.AddAuthentication()
+    //.AddMicrosoftAccount(microsoftOptions =>
+    //{
+    //    microsoftOptions.ClientId = builder.Configuration["WEBSITE_AUTH_MICROSOFT_CONSUMER_KEY"];
+    //    microsoftOptions.ClientSecret = builder.Configuration["WEBSITE_AUTH_MICROSOFT_CONSUMER_SECRET"];
+    //})
+    .AddGoogle(googleOptions =>
+     {
+         googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+         googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+         googleOptions.Events = new OAuthEvents()
+         {
+             OnRemoteFailure = (context) =>
+             {
+                 context.Response.Redirect(context?.Properties?.GetString("returnUrl"));
+                 context.HandleResponse();
+                 return Task.CompletedTask;
+             }
+         };
+     });
 //.AddTwitter(twitterOptions =>
 //{
 //    twitterOptions.ConsumerKey = builder.Configuration["Authentication:Twitter:ConsumerAPIKey"];
