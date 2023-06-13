@@ -16,8 +16,6 @@ namespace Zhuk.University.Tachka.Test
         public void LogMessageTest()
         {
             _logger.LogInformation("Testing log message.");
-
-
             _logger.LogTrace("This is a trace message.");
             _logger.LogDebug("This is a debug message.");
             _logger.LogInformation("This is an information message.");

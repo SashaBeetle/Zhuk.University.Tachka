@@ -44,24 +44,35 @@ namespace Zhuk.University.Tachka.Web.Pages
             Years = YearHelper.GetYearsList().ToList();
         }
 
-        public async Task<IActionResult> OnPost(List<IFormFile> photos)
+        public async Task<IActionResult> OnPost()
         {
+            if (!ModelState.IsValid)
+            {
+                Colors = ColorsRep.GetAllColors().ToList();
+                Years = YearHelper.GetYearsList().ToList();
+
+                return Page();
+            }
+
+            if (Car == null)
+            {
+                // Обробка ситуації, коли об'єкт Car є нульовим
+                return Page();
+            }
+
+            if (Car.Photo == null)
+            {
+                Car.Photo = "https://cdn.pixabay.com/photo/2018/02/27/16/23/car-3185869_640.png";
+            }
+
+            Colors = ColorsRep.GetAllColors().ToList();
+            Years = YearHelper.GetYearsList().ToList();
 
             string DateWithoutTime = date.ToShortDateString(); //ToString("dd / MM / yyyy");
 
             var result = await LocHelper.GetGeoInfo();
             var JObj = JObject.Parse(result);
             var city = (string)JObj["city"];
-
-            //if (!ModelState.IsValid)
-            //{
-            //    return Page();
-            //}
-
-            if (Car.Photo == null)
-            {
-                Car.Photo = "https://cdn.pixabay.com/photo/2018/02/27/16/23/car-3185869_640.png";
-            }
 
             await _carService.Create(new Car()
             {
