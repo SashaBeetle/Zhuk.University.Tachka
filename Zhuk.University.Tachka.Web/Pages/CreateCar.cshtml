@@ -14,7 +14,7 @@
             </div>
             <div class="col-6">
                 <input asp-for="Car.Model" class="w-100 form-control" placeholder="Hyundai" onfocus="this.placeholder=''" onblur="this.placeholder='Hyundai'" />
-                @Html.ValidationMessage("Car.Model")
+                <span asp-validation-for="Car.Model" class="text-error"></span>
             </div>
         </div>
         <div class="row mb-3">
@@ -23,7 +23,7 @@
             </div>
             <div class="col-6">
                 <input asp-for="Car.Name" class="w-100 form-control" placeholder="Tucson" onfocus="this.placeholder=''" onblur="this.placeholder='Tucson'" />
-                @Html.ValidationMessage("Car.Name")
+                <span asp-validation-for="Car.Name" class="text-error"></span>
             </div>
         </div>
         <div class="row mb-3">
@@ -32,7 +32,7 @@
             </div>
             <div class="col-6">
                 <input asp-for="Car.Price" class="w-100 form-control" placeholder="5000" onfocus="this.placeholder=''" onblur="this.placeholder='5000'" />
-                @Html.ValidationMessage("Car.Price")
+                <span asp-validation-for="Car.Price" class="text-error"></span>
             </div>
         </div>
         <div class="row mb-3">
@@ -47,7 +47,7 @@
                         <option value="@year">@year</option>
                     }
                 </select>
-                @Html.ValidationMessageFor(x => x.Car.Color)
+                <span asp-validation-for="Car.Year" class="text-error"></span>
             </div>
         </div>
         <div class="row mb-3">
@@ -62,7 +62,7 @@
                         <option value="@color">@color</option>
                     }
                 </select>
-                @Html.ValidationMessageFor(x => x.Car.Color)
+                <span asp-validation-for="Car.Color" class="text-error"></span>
             </div>
         </div>
         <div class="row mb-3">
@@ -71,7 +71,7 @@
             </div>
             <div class="col-6">
                 <textarea asp-for="Car.Description" class="w-100 form-control" rows="5" placeholder="The Hyundai Tucson is a popular compact crossover from Hyundai. This car combines stylish design, practicality and efficient performance." onfocus="this.placeholder=''" onblur="this.placeholder='The Hyundai Tucson is a popular compact crossover from Hyundai. This car combines stylish design, practicality and efficient performance.'"></textarea>
-                @Html.ValidationMessage("Car.Description")
+                <span asp-validation-for="Car.Description" class="text-error"></span>
             </div>
         </div>
 
@@ -81,7 +81,7 @@
             </div>
             <div class="col-6">
                 <input asp-for="Car.Photo" class="w-100 form-control" placeholder="https://Example.com.ua/assets/cache/images/Hyundai/Tucson/IMG.jpg" onfocus="this.placeholder=''" onblur="this.placeholder='https://Example.com.ua/assets/cache/images/Hyundai/Tucson/IMG.jpg'" />
-                @Html.ValidationMessage("Car.Model")
+                <span asp-validation-for="Car.Photo" class="text-error"></span>
             </div>
         </div>
                 
