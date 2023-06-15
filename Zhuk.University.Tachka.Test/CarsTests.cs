@@ -1,6 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.VisualStudio.TestPlatform.TestHost;
+using Newtonsoft.Json;
+using System.Net;
 using Zhuk.University.Tachka.Database;
 using Zhuk.University.Tachka.Database.Interfaces;
 using Zhuk.University.Tachka.Models.Database;
@@ -10,39 +15,28 @@ namespace Zhuk.University.Tachka.Test
     [TestClass]
     public class CarsTests : TestBase
     {
-        IDbEntityService<Car> _carService;
-        TachkaDbContext _dbContext;
-        private ILogger<CarsTests> _logger;
+        private readonly WebApplicationFactory<Program> _factory;
 
         public CarsTests()
         {
-            _logger = ResolveService<ILogger<CarsTests>>(); 
-            _carService = ResolveService<IDbEntityService<Car>>();
-            _dbContext= ResolveService<TachkaDbContext>();
+            _factory = new WebApplicationFactory<Program>();
         }
 
         [TestMethod]
-
-        public async Task Create()
+        public async Task GetAllCars_ShouldReturnAllCars()
         {
-            _logger.LogDebug("Testing creation of a car.");
+            // Arrange
+            HttpClient client = _factory.CreateClient();
 
-            var cars = await _carService.Create(new Car()
-            {
-                Name = "BMW",
-                Model = "X5",
-                Price = 1500,
-            });
-            _logger.LogDebug($"Created car with ID: {cars.Id}");
+            // Act
+            HttpResponseMessage response = await client.GetAsync("/api/сar");
+            string responseBody = await response.Content.ReadAsStringAsync();
+            List<Car> cars = JsonConvert.DeserializeObject<List<Car>>(responseBody);
 
-        }
-
-        [TestMethod]
-        public async Task GetAllCars()
-        {
-            _logger.LogInformation("Testing retrieval of all cars.");
-            var car = await _carService.GetAll().ToListAsync();
-
+            // Assert
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+            Assert.IsNotNull(cars);
+            Assert.IsTrue(cars.Count > 0);
         }
     }
 }
