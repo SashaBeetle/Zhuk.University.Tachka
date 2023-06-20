@@ -53,8 +53,17 @@
             </tr>
       
         }
+        
     </tbody>
 </table>
+@if (Model.UserOrders != null && Model.UserOrders.Any())
+{ }
+else
+{
+    <div class="d-flex justify-content-center">
+        <h4 class="text-center" style="color: gray;">Orders not found.</h4>
+    </div>
+}
 <h2 class="text-center mt-5">Other Orders</h2>
 <table class="table">
     <thead>

@@ -4,6 +4,13 @@
     ViewData["Title"] = "User Cars";
 
 }
+@if (Model.Cars != null && Model.Cars.Any())
+{}else
+{
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <h2 class="text-center" style="color: gray;">Cars not found.</h2>
+    </div>
+}
 
 <div class="container px-4 py-5" id="custom-cards">
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
