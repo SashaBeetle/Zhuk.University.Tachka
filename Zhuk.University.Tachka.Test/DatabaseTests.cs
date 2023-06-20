@@ -1,39 +1,51 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Moq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zhuk.University.Tachka.Database;
+using Zhuk.University.Tachka.Database.Interfaces;
+using Zhuk.University.Tachka.Models.Database;
+using Zhuk.University.Tachka.Web.Controllers;
 
 namespace Zhuk.University.Tachka.Test
 {
     [TestClass]
     public class DatabaseTests : TestBase
     {
-        private ILogger<DatabaseTests> _logger;
-        private TachkaDbContext _dbContext;
-
-        public DatabaseTests()
-        {
-            _logger = ResolveService<ILogger<DatabaseTests>>();
-            _dbContext = ResolveService<TachkaDbContext>();
-        }
-
         [TestMethod]
-        public void GetAllItemsTest()
+        public void GetAllCars_ShouldReturnListOfCars()
         {
-            _logger.LogTrace("Testing retrieval of all items from the database.");
+            // Arrange
+            var mockCarService = new Mock<IDbEntityService<Car>>();
+            mockCarService.Setup(service => service.GetAll().ToList())
+                .Returns(new List<Car>
+                {
+                    new Car { Id = 1, Name = "Car 1" },
+                    new Car { Id = 2, Name = "Car 2" },
+                    new Car { Id = 3, Name = "Car 3" }
+                });
 
-            
-            var items = _dbContext.Cars;
+            var controller = new CarController(mockCarService.Object);
 
+            // Act
+            var result = controller.GetAllCars();
 
-            // Перерахувати та вивести усі елементи
-            foreach (var item in items)
-            {
-                _logger.LogTrace($"Item: {item.Name}, Id: {item.Id}");
-            }
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(OkObjectResult));
+
+            var okResult = result;
+            Assert.IsInstanceOfType(okResult, typeof(List<Car>));
+
+            var cars = (List<Car>)okResult;
+            Assert.AreEqual(3, cars.Count);
         }
+
     }
 }

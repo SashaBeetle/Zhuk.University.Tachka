@@ -25,6 +25,10 @@ namespace Zhuk.University.Tachka.Web.Pages.User
                 .Where(c => c.UserId == User.Identity.Name)
                 .OrderByDescending(c => c.UserId)
                 .ToListAsync();
+            if(Cars == null)
+            {
+                
+            }
             _logger.LogTrace($"Sorted Cars in User Cars page from ({User.Identity.Name})");
         }
         public async Task<IActionResult> OnPostDelete(int id)
