@@ -32,7 +32,7 @@ namespace Zhuk.University.Tachka.Web.Pages
         private LocationHelper LocHelper = new LocationHelper();
 
         private DateTime date = DateTime.Now;
-        
+
 
         public CreateCarModel(IDbEntityService<Car> carService)
         {
