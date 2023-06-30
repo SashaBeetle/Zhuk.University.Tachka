@@ -12,11 +12,9 @@ namespace Zhuk.University.Tachka.Models.Database
         public string? Year { get; set; }
         public string? Description { get; set; }
         public decimal? Price { get; set; }
-        //[Column(TypeName = "Date")]
         public string? PlacementTime { get; set; }
         public string? PlacementCity { get; set; }
         public float? Rating { get; set; }
-        // Зв'язок один до багатьох з таблицею "Фотографії"
         public string? Photo { get; set; }
         public string UserId { get; set; }
 

@@ -2,6 +2,7 @@ using Blazorise;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using Zhuk.University.Tachka.Core.Constants;
 using Zhuk.University.Tachka.Database.Interfaces;
 using Zhuk.University.Tachka.Models.Database;
 
@@ -25,7 +26,7 @@ namespace Zhuk.University.Tachka.Web.Pages
         public async Task OnGet(int id)
         {
             Car = await _carService.GetById(id);
-            Car.Rating = Car.Rating + 0.1f;
+            Car.Rating += RatingRep.Rating;
             _logger.LogTrace($"Added Rating for Car id={id}");
             await _carService.Update(Car);
             _logger.LogTrace("Updated DataBase(Car) in Order");
