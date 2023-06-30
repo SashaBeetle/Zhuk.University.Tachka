@@ -47,9 +47,11 @@ namespace Zhuk.University.Tachka.Web.Pages.Orders
                 StartDate = startDate,
                 EndDate = endDate
             });
+
             Car = await _carService.GetById(id);
             Car.Rating += RatingRep.UpRating;
             await _carService.Update(Car);
+
             _logger.LogInformation($"Ending Creating Order by {User.Identity.Name}");
 
             _logger.LogTrace($"Redirect User({User.Identity.Name}) from /Order to /Index");
