@@ -24,12 +24,18 @@ namespace Zhuk.University.Tachka.Web.Pages.User
         {
             _carService = carService;
         }
-        public async Task OnGet(int id)
+        public async Task<IActionResult> OnGet(int id)
         {
             OwnCar = await _carService.GetById(id);
 
+            if(OwnCar.UserId != User.Identity.Name){
+                return RedirectToPage("/Error");
+            }
             Colors = ColorsRep.GetAllColors().ToList();
             Years = YearHelper.GetYearsList().ToList();
+
+            return Page();
+
         }
 
         public async Task<IActionResult> OnPost(int id)
@@ -46,9 +52,6 @@ namespace Zhuk.University.Tachka.Web.Pages.User
             }
 
             
-
-
-
             OwnCar.Name = Car?.Name;
             OwnCar.Model = Car?.Model;
             OwnCar.Price = Car?.Price;
