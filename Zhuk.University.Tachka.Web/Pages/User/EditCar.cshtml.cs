@@ -37,14 +37,15 @@ namespace Zhuk.University.Tachka.Web.Pages.User
 
             OwnCar = await _carService.GetById(id);
 
+            Colors = ColorsRep.GetAllColors().ToList();
+            Years = YearHelper.GetYearsList().ToList();
 
             if (Car.Photo == null)
             {
                 Car.Photo = "https://cdn.pixabay.com/photo/2018/02/27/16/23/car-3185869_640.png";
             }
 
-            Colors = ColorsRep.GetAllColors().ToList();
-            Years = YearHelper.GetYearsList().ToList();
+            
 
 
 
