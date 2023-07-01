@@ -1,0 +1,94 @@
+﻿@page
+@model Zhuk.University.Tachka.Web.Pages.User.EditCarModel
+@{
+    string Descr = @Model.OwnCar.Description;
+}
+
+<h1>Edit @Model.OwnCar.Model</h1>
+
+<div class="container-fluid">
+    <form method="post" enctype="multipart/form-data">
+        <div class="row mb-3">
+            <div class="col-2 px-2">
+                <label asp-for="Car.Model"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Car.Model" class="w-100 form-control" value="@Model.OwnCar.Model" />
+                <span asp-validation-for="Car.Model" class="text-error"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 px-2">
+                <label asp-for="Car.Name"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Car.Name" class="w-100 form-control" value="@Model.OwnCar.Name" />
+                <span asp-validation-for="Car.Name" class="text-error"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 px-2">
+                <label asp-for="Car.Price"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Car.Price" class="w-100 form-control" value="@Model.OwnCar.Price" />
+                <span asp-validation-for="Car.Price" class="text-error"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 px-2">
+                <label asp-for="Car.Year"></label>
+            </div>
+            <div class="col-6">
+                <select asp-for="Car.Year" class="w-100 form-control">
+                    <option value="@Model.OwnCar.Year" style="color: #808080;">@Model.OwnCar.Year</option>
+                    @foreach (var year in Model.Years)
+                    {
+                        <option value="@year">@year</option>
+                    }
+                </select>
+                <span asp-validation-for="Car.Year" class="text-error"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 px-2">
+                <label asp-for="Car.Color"></label>
+            </div>
+            <div class="col-6">
+                <select asp-for="Car.Color" class="w-100 form-control">
+                    <option value="@Model.OwnCar.Color" style="color: #808080;">@Model.OwnCar.Color</option>
+                    @foreach (var color in Model.Colors)
+                    {
+                        <option value="@color">@color</option>
+                    }
+                </select>
+                <span asp-validation-for="Car.Color" class="text-error"></span>
+            </div>
+        </div>
+       @* <div class="row mb-3">
+            <div class="col-2 px-2">
+                <label asp-for="Car.Description"></label>
+            </div>
+            <div class="col-6">
+                @Html.TextAreaFor(model => model.OwnCar.Description, new { @class = "w-100 form-control", rows = 5 })
+                <span asp-validation-for="Car.Description" class="text-error"></span>
+            </div>
+        </div>*@
+
+        <div class="row mb-3">
+            <div class="col-2 px-2">
+                <label asp-for="Car.Photo"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Car.Photo" class="w-100 form-control" value="@Model.OwnCar.Photo" />
+                <span asp-validation-for="Car.Photo" class="text-error"></span>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-2">
+            <div class="col-3">
+                <input type="submit" class="w-100 form-control" />
+            </div>
+        </div>
+    </form>
+</div>
