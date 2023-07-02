@@ -62,7 +62,8 @@ namespace Zhuk.University.Tachka.Web.Pages.User
 
             await _carService.Update(OwnCar);
 
-            return new RedirectToPageResult("/User/Cars");
+            return RedirectToPage("/User/EditCar", new { id = id });
+            /*return new RedirectToPageResult($"/User/EditCar?id={id}")*/;
         }
     }
 }
