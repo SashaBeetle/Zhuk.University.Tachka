@@ -28,7 +28,7 @@ namespace Zhuk.University.Tachka.Web.Pages.User
         {
             OwnCar = await _carService.GetById(id);
 
-            if(OwnCar.UserId != User.Identity.Name){
+            if (OwnCar.UserId != User.Identity.Name){
                 return RedirectToPage("/Error");
             }
             Colors = ColorsRep.GetAllColors().ToList();
@@ -38,7 +38,7 @@ namespace Zhuk.University.Tachka.Web.Pages.User
 
         }
 
-        public async Task<IActionResult> OnPost(int id)
+        public async Task<IActionResult> OnPost(int id, string baner)
         {
 
             OwnCar = await _carService.GetById(id);
@@ -62,8 +62,12 @@ namespace Zhuk.University.Tachka.Web.Pages.User
 
             await _carService.Update(OwnCar);
 
+            TempData["ShowGreenBanner"] = true;
+            TempData.Keep("ShowGreenBanner");
+
             return RedirectToPage("/User/EditCar", new { id = id });
-            /*return new RedirectToPageResult($"/User/EditCar?id={id}")*/;
+            /*return new RedirectToPageResult($"/User/EditCar?id={id}")*/
+            ;
         }
     }
 }
