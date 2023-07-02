@@ -1,7 +1,7 @@
 ﻿@page
 @model Zhuk.University.Tachka.Web.Pages.User.EditCarModel
 @{
-    string Descr = @Model.OwnCar.Description;
+    ViewData["Title"] = "Edit "+Model.OwnCar.Model;
 }
 
 <h1>Edit @Model.OwnCar.Model</h1>
@@ -92,3 +92,15 @@
         </div>
     </form>
 </div>
+
+@{
+    bool showGreenBanner = TempData.ContainsKey("ShowGreenBanner") && (bool)TempData["ShowGreenBanner"];
+}
+
+<div class="alert alert-success text-center" role="alert" id="greenBanner" style="display: @(showGreenBanner ? "block" : "none"); width: 300px; height: 50px;">
+    <span>Success!</span>
+</div>
+
+
+
+
