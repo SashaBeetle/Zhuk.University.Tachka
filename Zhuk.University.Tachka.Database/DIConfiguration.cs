@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zhuk.University.Tachka.Database.Helpers;
 using Zhuk.University.Tachka.Database.Interfaces;
 using Zhuk.University.Tachka.Database.Services;
 using Zhuk.University.Tachka.Models.Database;
@@ -20,8 +21,8 @@ namespace Zhuk.University.Tachka.Database
         {
             services.AddDbContext<TachkaDbContext>((x)=> x.UseSqlServer(configuration.GetConnectionString("TachkaDatabase")));
             services.AddDatabaseDeveloperPageExceptionFilter();
-
             services.AddScoped(typeof(IDbEntityService<>), typeof(DbEntityService<>));
+            services.AddScoped<AvatarHelper>();
         }
 
         public static void RegisterIdentityDependencies(this IServiceCollection services)

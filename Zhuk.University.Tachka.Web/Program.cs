@@ -13,8 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.RegisterDatabaseDependencies(builder.Configuration);
-//builder.Services.RegisterIdentityDependencies();
 builder.Services.AddApplicationInsightsTelemetry();
+builder.Services.AddHttpClient();
 
 // Add services to the container.
 builder.Services.AddControllers();
