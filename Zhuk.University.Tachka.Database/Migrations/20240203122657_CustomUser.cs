@@ -6,16 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Zhuk.University.Tachka.Database.Migrations
 {
     /// <inheritdoc />
-    public partial class FinalMigration : Migration
+    public partial class CustomUser : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "Avatar",
-                table: "AspNetUsers",
-                nullable: true);
-
             migrationBuilder.AddColumn<string>(
                 name: "Photo",
                 table: "Cars",
@@ -28,6 +23,12 @@ namespace Zhuk.University.Tachka.Database.Migrations
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "");
+
+            migrationBuilder.AddColumn<string>(
+                name: "Avatar",
+                table: "AspNetUsers",
+                type: "nvarchar(max)",
+                nullable: true);
 
             migrationBuilder.CreateTable(
                 name: "Orders",
@@ -85,6 +86,10 @@ namespace Zhuk.University.Tachka.Database.Migrations
             migrationBuilder.DropColumn(
                 name: "UserId",
                 table: "Cars");
+
+            migrationBuilder.DropColumn(
+                name: "Avatar",
+                table: "AspNetUsers");
         }
     }
 }

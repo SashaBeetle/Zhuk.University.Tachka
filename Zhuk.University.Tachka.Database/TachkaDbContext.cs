@@ -4,7 +4,7 @@ using Zhuk.University.Tachka.Models.Database;
 
 namespace Zhuk.University.Tachka.Database
 {
-    public class TachkaDbContext : IdentityDbContext
+    public class TachkaDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Car> Cars { get; set; }
         public DbSet<Order> Orders { get; set; }

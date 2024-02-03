@@ -9,6 +9,6 @@ namespace Zhuk.University.Tachka.Models.Database
 {
     public class ApplicationUser : IdentityUser
     {
-        public string AvatarPath { get; set; }
+        public string? Avatar { get; set; }
     }
 }
