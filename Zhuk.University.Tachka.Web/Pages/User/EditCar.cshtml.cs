@@ -32,14 +32,30 @@ namespace Zhuk.University.Tachka.Web.Pages.User
         {
             _carService = carService;
         }
-        public async Task OnGet(int id)
+        public async Task<IActionResult> OnGet(int id)
         {
 #pragma warning disable CS8601 // Possible null reference assignment.
             OwnCar = await _carService.GetById(id);
 #pragma warning restore CS8601 // Possible null reference assignment.
 
+            if (OwnCar.UserId != User.Identity.Name){
+                return RedirectToPage("/Error");
+            }
             Colors = ColorsRep.GetAllColors().ToList();
             Years = YearHelper.GetYearsList().ToList();
+
+            return Page();
+
+        }
+
+        public async Task<IActionResult> OnPost(int id, string baner)
+        {
+
+            OwnCar = await _carService.GetById(id);
+
+            Colors = ColorsRep.GetAllColors().ToList();
+            Years = YearHelper.GetYearsList().ToList();
+<<<<<<< HEAD
         }
 
         public async Task<IActionResult> OnPost(int id)
@@ -49,18 +65,24 @@ namespace Zhuk.University.Tachka.Web.Pages.User
             OwnCar = await _carService.GetById(id);
 #pragma warning restore CS8601 // Possible null reference assignment.
 
+=======
+>>>>>>> bbf81d0fc82cedf11e1a73c512ced5f2512b79ce
 
             if (Car.Photo == null)
             {
                 Car.Photo = "https://cdn.pixabay.com/photo/2018/02/27/16/23/car-3185869_640.png";
             }
 
+<<<<<<< HEAD
             Colors = ColorsRep.GetAllColors().ToList();
             Years = YearHelper.GetYearsList().ToList();
 
 
 
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
+=======
+            
+>>>>>>> bbf81d0fc82cedf11e1a73c512ced5f2512b79ce
             OwnCar.Name = Car?.Name;
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
             OwnCar.Model = Car?.Model;
@@ -72,7 +94,11 @@ namespace Zhuk.University.Tachka.Web.Pages.User
 
             await _carService.Update(OwnCar);
 
-            return new RedirectToPageResult("/User/Cars");
+            TempData["ShowGreenBanner"] = true;
+            TempData.Keep("ShowGreenBanner");
+
+            return RedirectToPage("/User/EditCar", new { id = id });
+            ;
         }
     }
 }

@@ -45,6 +45,10 @@ builder.Services.AddAuthentication()
              }
          };
      });
+<<<<<<< HEAD
+=======
+
+>>>>>>> bbf81d0fc82cedf11e1a73c512ced5f2512b79ce
 
 
 builder.Services.AddEndpointsApiExplorer();

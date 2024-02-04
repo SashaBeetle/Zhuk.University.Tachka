@@ -1,7 +1,7 @@
 ﻿@page
 @model Zhuk.University.Tachka.Web.Pages.User.EditCarModel
 @{
-    string Descr = @Model.OwnCar.Description;
+    ViewData["Title"] = "Edit "+Model.OwnCar.Model;
 }
 
 <h1>Edit @Model.OwnCar.Model</h1>
@@ -65,15 +65,15 @@
                 <span asp-validation-for="Car.Color" class="text-error"></span>
             </div>
         </div>
-       @* <div class="row mb-3">
+        <div class="row mb-3">
             <div class="col-2 px-2">
                 <label asp-for="Car.Description"></label>
             </div>
             <div class="col-6">
-                @Html.TextAreaFor(model => model.OwnCar.Description, new { @class = "w-100 form-control", rows = 5 })
+                <input asp-for="Car.Description" class="w-100 form-control" value="@Model.OwnCar.Description" />
                 <span asp-validation-for="Car.Description" class="text-error"></span>
             </div>
-        </div>*@
+        </div>
 
         <div class="row mb-3">
             <div class="col-2 px-2">
@@ -87,8 +87,20 @@
 
         <div class="row mt-4 mb-2">
             <div class="col-3">
-                <input type="submit" class="w-100 form-control" />
+                <input type="submit" class="w-100 form-control" value="Confirm" />
             </div>
         </div>
     </form>
 </div>
+
+@{
+    bool showGreenBanner = TempData.ContainsKey("ShowGreenBanner") && (bool)TempData["ShowGreenBanner"];
+}
+
+<div class="alert alert-success text-center" role="alert" id="greenBanner" style="display: @(showGreenBanner ? "block" : "none"); width: 300px; height: 50px;">
+    <span>Success!</span>
+</div>
+
+
+
+
