@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Zhuk.University.Tachka.Models.Database;
 
 namespace Zhuk.University.Tachka.Database
 {
-    public class TachkaDbContext : IdentityDbContext<ApplicationUser>
+    public class TachkaDbContext : IdentityDbContext<IdentityUser>
     {
         public DbSet<Car> Cars { get; set; }
         public DbSet<Order> Orders { get; set; }
