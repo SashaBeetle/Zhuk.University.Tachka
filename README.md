@@ -46,9 +46,11 @@ Than (if you have App Services) add line of your connection string to applicatio
 ## Decomposition of tasks
 ### 1. Frontend
 * ✅ Display Database
-* 🔳 Display API
+* ✅/🔳 Display API
 * ✅ Display User register and login
-* 🔳 Display User profile
+* ✅ Display User profile
+* 🔳 Display beautiful main page
+* 🔳 Create beautiful site design
 
 ### 2. Database
 * ✅ Create Database
@@ -57,7 +59,11 @@ Than (if you have App Services) add line of your connection string to applicatio
 * ✅ Create Schemas for objects
 
 ### 3. API
-* 🔳 Controller
+* 🔳/✅ User Avatar API
+* 🔳 User Avatar API Controller
+* ✅ User Location API
+* ✅ User Location API Controller
+
 
 ### 4. Authorization
 * ✅ Create Login and Register Pages
@@ -66,29 +72,39 @@ Than (if you have App Services) add line of your connection string to applicatio
 * ✅ Create Models
 
 ### 5. Order
-* 🔳 Controllers
-* 🔳 Pages
-* 🔳 Features
+* ✅ Controllers
+* ✅ Inividual Pages
+* ✅ Features
+* ✅ Tracker
 
-### 6. Loggs
-* 🔳 Add logs for Authorization
-* 🔳 Add logs for Orders
-* 🔳 Add logs for User Profile
+### 6. Suggestion(Algorithm)
+* ✅ Page
+* ✅ Controller
+* ✅ Filter
 
-### 7. Test
-* 🔳 Test Authorization
-* 🔳 Test Orders
-* 🔳 Test User Profile
+### 7. Loggs
+* ✅ Add logs for Authorization
+* ✅ Add logs for Orders
+* ✅ Add logs for User Profile
 
-### 8. Azure
+### 8. Test
+* ✅ Test DataBase
+* ✅ Test Cars
+* ✅ Test Loggs
+
+### 9. Azure
 * ✅ Deploy the project
 * ✅ Connect Application Insights
 * ✅ Connect Azure Database
 * ✅ CI/CD
 
-### 9. Git
+### 10. Git
 * ✅ Add README on GIT
-* 🔳 CI/CD
+* ✅ CI/CD
+
+# Presentation of the project
+- [Architects' diagram](https://lucid.app/lucidchart/4ebd444d-e833-412f-94ab-8dc3d804af62/edit?viewport_loc=-32%2C-9%2C2115%2C1139%2CwWx6J-GdM1Zc&invitationId=inv_7b2b7cd5-47c8-4788-9510-f27e2be5d53a)
+- [Diagram of infrastructure used](https://lucid.app/lucidchart/4ebd444d-e833-412f-94ab-8dc3d804af62/edit?viewport_loc=159%2C225%2C1906%2C1027%2CQzx6eZss7Cns&invitationId=inv_7b2b7cd5-47c8-4788-9510-f27e2be5d53a)
 
 # 📒 Lab 3 
 - Task: I introduce a new feature on the website - Dark Mode. This feature will enable users to switch the website's interface to a darker color scheme that is easier on the eyes in low light environments.
@@ -96,3 +112,12 @@ Than (if you have App Services) add line of your connection string to applicatio
 - [My project](https://github.com/VitaliySynytskyi/CodeFlow)
 - [Pull Request 1](https://github.com/SashaBeetle/Zhuk.University.Tachka/commit/851a4a7e8d9b94422127ae645520be15eeae0765)
 - [Pull Request 2](https://github.com/SashaBeetle/Zhuk.University.Tachka/commit/46954eb068c609e2f13a6cc9d344a6c3034379a8)
+
+# 📒 Lab 4
+Zakala Oleksandr
+- [My project](https://github.com/Rovikido/SafeRoute)
+- [Pull request link](https://github.com/Rovikido/Zhuk.University.Tachka/pull/1#pullrequestreview-1441765335)
+
+Blystsiv Ostap
+- [My project](https://github.com/blystsiv/connectify)
+- [Pull request link](https://github.com/blystsiv/Zhuk.University.Tachka/pull/1)

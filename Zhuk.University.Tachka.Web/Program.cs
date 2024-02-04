@@ -8,13 +8,14 @@ using Microsoft.AspNetCore.Identity;
 using Blazorise;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authentication.OAuth;
+using Zhuk.University.Tachka.Models.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.RegisterDatabaseDependencies(builder.Configuration);
-//builder.Services.RegisterIdentityDependencies();
 builder.Services.AddApplicationInsightsTelemetry();
+builder.Services.AddHttpClient();
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -25,17 +26,11 @@ builder.Services.AddDbContext<ZhukUniversityTachkaWebContext>(options =>
     .UseSqlServer(builder.Configuration.GetConnectionString("ZhukUniversityTachkaWebContext") ?? throw new InvalidOperationException("Connection string 'ZhukUniversityTachkaWebContext' not found.")));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<TachkaDbContext>().AddDefaultTokenProviders();
 
 
 builder.Services.AddAuthentication()
-    //.AddMicrosoftAccount(microsoftOptions =>
-    //{
-    //    microsoftOptions.ClientId = builder.Configuration["WEBSITE_AUTH_MICROSOFT_CONSUMER_KEY"];
-    //    microsoftOptions.ClientSecret = builder.Configuration["WEBSITE_AUTH_MICROSOFT_CONSUMER_SECRET"];
-    //})
     .AddGoogle(googleOptions =>
      {
          googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
@@ -50,13 +45,7 @@ builder.Services.AddAuthentication()
              }
          };
      });
-//.AddTwitter(twitterOptions =>
-//{
-//    twitterOptions.ConsumerKey = builder.Configuration["Authentication:Twitter:ConsumerAPIKey"];
-//    twitterOptions.ConsumerSecret = builder.Configuration["Authentication:Twitter:ConsumerSecret"];
-//});
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 
 builder.Services.AddEndpointsApiExplorer();

@@ -24,30 +24,34 @@ namespace Zhuk.University.Tachka.Web.Pages.User
         {
             _carService = carService;
         }
-        public async Task OnGet(int id)
+        public async Task<IActionResult> OnGet(int id)
         {
+            OwnCar = await _carService.GetById(id);
+
+            if (OwnCar.UserId != User.Identity.Name){
+                return RedirectToPage("/Error");
+            }
+            Colors = ColorsRep.GetAllColors().ToList();
+            Years = YearHelper.GetYearsList().ToList();
+
+            return Page();
+
+        }
+
+        public async Task<IActionResult> OnPost(int id, string baner)
+        {
+
             OwnCar = await _carService.GetById(id);
 
             Colors = ColorsRep.GetAllColors().ToList();
             Years = YearHelper.GetYearsList().ToList();
-        }
-
-        public async Task<IActionResult> OnPost(int id)
-        {
-
-            OwnCar = await _carService.GetById(id);
-
 
             if (Car.Photo == null)
             {
                 Car.Photo = "https://cdn.pixabay.com/photo/2018/02/27/16/23/car-3185869_640.png";
             }
 
-            Colors = ColorsRep.GetAllColors().ToList();
-            Years = YearHelper.GetYearsList().ToList();
-
-
-
+            
             OwnCar.Name = Car?.Name;
             OwnCar.Model = Car?.Model;
             OwnCar.Price = Car?.Price;
@@ -58,7 +62,11 @@ namespace Zhuk.University.Tachka.Web.Pages.User
 
             await _carService.Update(OwnCar);
 
-            return new RedirectToPageResult("/User/Cars");
+            TempData["ShowGreenBanner"] = true;
+            TempData.Keep("ShowGreenBanner");
+
+            return RedirectToPage("/User/EditCar", new { id = id });
+            ;
         }
     }
 }
