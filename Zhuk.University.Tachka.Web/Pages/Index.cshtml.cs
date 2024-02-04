@@ -22,7 +22,11 @@ namespace Zhuk.University.Tachka.Web.Pages
         private readonly ILogger<IndexModel> _logger;
         private readonly IDbEntityService<Car> _carService;
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public IndexModel(IDbEntityService<Car> carService, ILogger<IndexModel> logger)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             _carService = carService;
             _logger = logger;

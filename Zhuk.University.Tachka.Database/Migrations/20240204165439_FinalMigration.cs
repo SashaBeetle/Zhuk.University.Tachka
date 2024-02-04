@@ -12,11 +12,6 @@ namespace Zhuk.University.Tachka.Database.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "Avatar",
-                table: "AspNetUsers",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
                 name: "Photo",
                 table: "Cars",
                 type: "nvarchar(max)",

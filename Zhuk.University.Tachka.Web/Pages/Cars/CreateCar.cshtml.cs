@@ -34,7 +34,13 @@ namespace Zhuk.University.Tachka.Web.Pages
         private DateTime date = DateTime.Now;
 
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public CreateCarModel(IDbEntityService<Car> carService)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             _carService = carService;
         }
@@ -72,8 +78,12 @@ namespace Zhuk.University.Tachka.Web.Pages
 
             var result = await LocHelper.GetGeoInfo();
             var JObj = JObject.Parse(result);
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             var city = (string)JObj["city"];
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
+#pragma warning disable CS8601 // Possible null reference assignment.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             await _carService.Create(new Car()
             {
                 Name = Car?.Name,
@@ -88,6 +98,8 @@ namespace Zhuk.University.Tachka.Web.Pages
                 UserId = User.Identity.Name,
                 Photo = Car?.Photo
             });
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+#pragma warning restore CS8601 // Possible null reference assignment.
 
             return new RedirectToPageResult("/Carlist");
         }

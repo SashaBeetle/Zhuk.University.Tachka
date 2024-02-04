@@ -21,7 +21,13 @@ namespace Zhuk.University.Tachka.Web.Pages
         private LocationHelper LocHelper = new LocationHelper();
 
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public SuggestionModel(IDbEntityService<Car> carService, ILogger<SuggestionModel> logger)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             _carService = carService;
             _logger = logger;
@@ -31,7 +37,9 @@ namespace Zhuk.University.Tachka.Web.Pages
         {
             var result = await LocHelper.GetGeoInfo();
             var JObj = JObject.Parse(result);
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             var city = (string)JObj["city"];
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
             _logger.LogInformation($"Parsed API Json, get city = {city}");
 
             Cars = await _carService.GetAll().OrderByDescending(c => c.Rating).ToListAsync();

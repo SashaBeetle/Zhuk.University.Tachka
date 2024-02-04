@@ -12,7 +12,7 @@ using Zhuk.University.Tachka.Database;
 namespace Zhuk.University.Tachka.Database.Migrations
 {
     [DbContext(typeof(TachkaDbContext))]
-    [Migration("20230612081033_FinalMigration")]
+    [Migration("20240204165439_FinalMigration")]
     partial class FinalMigration
     {
         /// <inheritdoc />

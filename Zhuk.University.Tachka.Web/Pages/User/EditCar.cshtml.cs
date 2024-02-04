@@ -20,13 +20,23 @@ namespace Zhuk.University.Tachka.Web.Pages.User
         private readonly IDbEntityService<Car> _carService;
 
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public EditCarModel(IDbEntityService<Car> carService)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             _carService = carService;
         }
         public async Task OnGet(int id)
         {
+#pragma warning disable CS8601 // Possible null reference assignment.
             OwnCar = await _carService.GetById(id);
+#pragma warning restore CS8601 // Possible null reference assignment.
 
             Colors = ColorsRep.GetAllColors().ToList();
             Years = YearHelper.GetYearsList().ToList();
@@ -35,7 +45,9 @@ namespace Zhuk.University.Tachka.Web.Pages.User
         public async Task<IActionResult> OnPost(int id)
         {
 
+#pragma warning disable CS8601 // Possible null reference assignment.
             OwnCar = await _carService.GetById(id);
+#pragma warning restore CS8601 // Possible null reference assignment.
 
 
             if (Car.Photo == null)
@@ -48,7 +60,9 @@ namespace Zhuk.University.Tachka.Web.Pages.User
 
 
 
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             OwnCar.Name = Car?.Name;
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
             OwnCar.Model = Car?.Model;
             OwnCar.Price = Car?.Price;
             OwnCar.Color = Car?.Color;
