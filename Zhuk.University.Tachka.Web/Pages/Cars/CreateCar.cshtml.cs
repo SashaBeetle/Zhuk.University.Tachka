@@ -1,21 +1,11 @@
-using Blazorise;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Swashbuckle.AspNetCore.Annotations;
-using System.Collections.Generic;
-using System.Data;
-using System.Runtime.InteropServices.JavaScript;
 using Zhuk.University.Tachka.Core.Constants;
-using Zhuk.University.Tachka.Database;
 using Zhuk.University.Tachka.Database.Helpers;
 using Zhuk.University.Tachka.Database.Interfaces;
 using Zhuk.University.Tachka.Models.Database;
 using Zhuk.University.Tachka.Models.Frontend;
-using static IdentityServer4.Models.IdentityResources;
 
 namespace Zhuk.University.Tachka.Web.Pages
 {
@@ -89,7 +79,7 @@ namespace Zhuk.University.Tachka.Web.Pages
                 Photo = Car?.Photo
             });
 
-            return new RedirectToPageResult("/Carlist");
+            return new RedirectToPageResult("/Cars/Carlist");
         }
 
        
