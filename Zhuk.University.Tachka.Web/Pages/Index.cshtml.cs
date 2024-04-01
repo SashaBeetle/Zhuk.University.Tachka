@@ -24,10 +24,10 @@ namespace Zhuk.University.Tachka.Web.Pages
 
         private readonly ILogger<IndexModel> _logger;
         private readonly IDbEntityService<Car> _carService;
-        private readonly AvatarHelper _avatarHelper;
+        private readonly IAvatarHelper _avatarHelper;
 
 
-        public IndexModel(IDbEntityService<Car> carService, ILogger<IndexModel> logger, AvatarHelper avatarHelper)
+        public IndexModel(IDbEntityService<Car> carService, ILogger<IndexModel> logger, IAvatarHelper avatarHelper)
         {
             _carService = carService;
             _logger = logger;

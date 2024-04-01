@@ -8,6 +8,6 @@ namespace Zhuk.University.Tachka.Database.Interfaces
 {
     public interface IAvatarHelper
     {
-        string GetRandomAvatarUrl(string gender);
+        public Task<string> GetRandomAvatar();
     }
 }
