@@ -22,7 +22,7 @@ namespace Zhuk.University.Tachka.Database
             services.AddDbContext<TachkaDbContext>((x)=> x.UseSqlServer(configuration.GetConnectionString("TachkaDatabase")));
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddScoped(typeof(IDbEntityService<>), typeof(DbEntityService<>));
-            services.AddScoped<AvatarHelper>();
+            services.AddScoped<IAvatarHelper, AvatarHelper>();
         }
 
         public static void RegisterIdentityDependencies(this IServiceCollection services)

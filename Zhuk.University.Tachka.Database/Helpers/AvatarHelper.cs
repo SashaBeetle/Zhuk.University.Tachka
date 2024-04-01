@@ -7,11 +7,11 @@ using Zhuk.University.Tachka.Database.Interfaces;
 
 namespace Zhuk.University.Tachka.Database.Helpers
 {
-    public class AvatarHelper
+    public class AvatarHelper : IAvatarHelper
     {
         private  readonly HttpClient _httpClient = new HttpClient();
 
-        public  async Task<string> GetRandomAvatar()
+        public async Task<string> GetRandomAvatar()
         {
             string apiUrl = "https://avatars.dicebear.com/api/male/"; // Змініть стать (male або female) за потребою
 
