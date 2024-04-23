@@ -10,20 +10,14 @@ namespace Zhuk.University.Tachka.Database.Helpers
     {
         private static int ValidateTodayYear()
         {
-            int currentYear = DateTime.Now.Year;
-            return currentYear;
+            return DateTime.Now.Year;
         }
-        public static List<int> GetYearsList()
+        public static IEnumerable<int> GetYearsList()
         {
-            List<int> yearsList = new List<int>();
-
             for (int year = 1990; year <= ValidateTodayYear(); year++)
             {
-                yearsList.Add(year);
+                yield return year;
             }
-
-            return yearsList;
         }
-
     }
 }

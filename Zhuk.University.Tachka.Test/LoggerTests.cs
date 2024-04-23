@@ -23,8 +23,6 @@ namespace Zhuk.University.Tachka.Test
             _logger.LogError("This is an error message.");
             _logger.LogCritical("This is a critical message.");
         }
-
-
     }
 
 }

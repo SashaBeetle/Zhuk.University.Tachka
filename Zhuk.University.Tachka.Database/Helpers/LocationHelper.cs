@@ -28,15 +28,16 @@ namespace Zhuk.University.Tachka.Database.Helpers
         }
         public async Task<string> GetGeoInfo()
         {
-            //I have already created this function under GeoInfoProvider class.
             var ipAddress = await GetIpAdress();
-            // When geting ipaddress, call this function and pass ipaddress as given below
+
             var response = await _httpClient.GetAsync($"http://api.ipstack.com/" + ipAddress + "?access_key=c77685fd0cdd05789e338b51a35fde4e");
+
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
                 return json;
             }
+
             return null;
         }
     }
