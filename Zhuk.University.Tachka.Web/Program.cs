@@ -1,14 +1,8 @@
-﻿using Zhuk.University.Tachka.Core;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
 using Zhuk.University.Tachka.Web.Data;
 using Zhuk.University.Tachka.Database;
-using Zhuk.University.Tachka.Web;
 using Microsoft.AspNetCore.Identity;
-using Blazorise;
-using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authentication.OAuth;
-using Zhuk.University.Tachka.Models.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -88,3 +82,10 @@ app.UseSwaggerUI(c =>
 }); 
 
 app.Run();
+
+
+// DI
+// Repository
+// Singleton
+// Builder
+// Iterator

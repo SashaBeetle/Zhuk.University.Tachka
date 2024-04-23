@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.Routing;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Zhuk.University.Tachka.Database.Helpers;
 using Zhuk.University.Tachka.Database.Interfaces;
 
