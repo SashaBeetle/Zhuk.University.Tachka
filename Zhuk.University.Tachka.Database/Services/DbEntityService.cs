@@ -64,7 +64,6 @@ namespace Zhuk.University.Tachka.Database.Services
 
             if (result == null)
             {
-                //todo: need to add logger
                 return null;
             }
 

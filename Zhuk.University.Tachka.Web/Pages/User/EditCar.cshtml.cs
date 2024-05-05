@@ -28,9 +28,11 @@ namespace Zhuk.University.Tachka.Web.Pages.User
         {
             OwnCar = await _carService.GetById(id);
 
-            if (OwnCar.UserId != User.Identity.Name){
+            if (OwnCar.UserId != User.Identity.Name)
+            {
                 return RedirectToPage("/Error");
             }
+
             Colors = ColorsRep.GetAllColors().ToList();
             Years = YearHelper.GetYearsList().ToList();
 

@@ -82,10 +82,3 @@ app.UseSwaggerUI(c =>
 }); 
 
 app.Run();
-
-
-// DI
-// Repository
-// Singleton
-// Builder
-// Iterator
