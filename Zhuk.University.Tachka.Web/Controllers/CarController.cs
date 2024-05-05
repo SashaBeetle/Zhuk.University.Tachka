@@ -25,6 +25,15 @@ namespace Zhuk.University.Tachka.Web.Controllers
 
                 return Ok(cars);
             }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> GetCar(int id)
+        {
+            Car car = await _carService.GetById(id);
+
+           _carService.Delete(car);
+
+            return Ok(car);
+        }
         
     }
 }
