@@ -25,6 +25,7 @@ namespace Zhuk.University.Tachka.Web.Pages.User
                 .Where(c => c.UserId == User.Identity.Name)
                 .OrderByDescending(c => c.UserId)
                 .ToListAsync();
+
             if(Cars == null)
             {
                 

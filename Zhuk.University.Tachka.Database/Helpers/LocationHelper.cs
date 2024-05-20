@@ -28,9 +28,7 @@ namespace Zhuk.University.Tachka.Database.Helpers
         }
         public async Task<string> GetGeoInfo()
         {
-            var ipAddress = await GetIpAdress();
-
-            var response = await _httpClient.GetAsync($"http://api.ipstack.com/" + ipAddress + "?access_key=c77685fd0cdd05789e338b51a35fde4e");
+            var response = await _httpClient.GetAsync($"http://api.ipstack.com/" + GetIpAdress() + "?access_key=c77685fd0cdd05789e338b51a35fde4e");
 
             if (response.IsSuccessStatusCode)
             {

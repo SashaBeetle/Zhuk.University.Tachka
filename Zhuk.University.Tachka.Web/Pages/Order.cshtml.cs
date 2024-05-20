@@ -27,6 +27,7 @@ namespace Zhuk.University.Tachka.Web.Pages
         {
             Car = await _carService.GetById(id);
             Car.Rating += RatingRep.Rating;
+
             _logger.LogTrace($"Added Rating for Car id={id}");
             await _carService.Update(Car);
             _logger.LogTrace("Updated DataBase(Car) in Order");

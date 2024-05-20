@@ -14,51 +14,29 @@ namespace Zhuk.University.Tachka.Web.Pages
         [BindProperty]
         public CreateCarRequest Car { get; set; }
 
-        public IEnumerable<string> Colors { get; set; }
-        public List<int> Years { get; set; }
+        public IEnumerable<string> Colors = ColorsRep.GetAllColors().ToList();
+        public List<int> Years = YearHelper.GetYearsList().ToList();
+
         private readonly IDbEntityService<Car> _carService;
 
-
         private LocationHelper LocHelper = new LocationHelper();
-
-        private DateTime date = DateTime.Now;
-
 
         public CreateCarModel(IDbEntityService<Car> carService)
         {
             _carService = carService;
         }
-        public void OnGet()
-        {
-            Colors = ColorsRep.GetAllColors().ToList();
-            Years = YearHelper.GetYearsList().ToList();
-        }
 
         public async Task<IActionResult> OnPost()
         {
             if (!ModelState.IsValid)
-            {
-                Colors = ColorsRep.GetAllColors().ToList();
-                Years = YearHelper.GetYearsList().ToList();
-
-                return Page();
-            }
+                return Page();           
 
             if (Car == null)
-            {
-                // Обробка ситуації, коли об'єкт Car є нульовим
                 return Page();
-            }
-
+            
             if (Car.Photo == null)
-            {
                 Car.Photo = "https://cdn.pixabay.com/photo/2018/02/27/16/23/car-3185869_640.png";
-            }
-
-            Colors = ColorsRep.GetAllColors().ToList();
-            Years = YearHelper.GetYearsList().ToList();
-
-            string DateWithoutTime = date.ToShortDateString(); //ToString("dd / MM / yyyy");
+            
 
             var result = await LocHelper.GetGeoInfo();
             var JObj = JObject.Parse(result);
@@ -72,7 +50,7 @@ namespace Zhuk.University.Tachka.Web.Pages
                 Color = Car?.Color,
                 Year = Car?.Year,
                 Description = Car?.Description,
-                PlacementTime = DateWithoutTime,
+                PlacementTime = DateTime.Now.ToShortDateString(), // ToString("dd / MM / yyyy");
                 PlacementCity = city,
                 Rating = 0,
                 UserId = User.Identity.Name,

@@ -25,7 +25,7 @@ namespace Zhuk.University.Tachka.Models.Frontend
         public string? Color { get; set; }
 
         [Required(ErrorMessage = "Це поле є обов'язковим.")]
-        [Range(1990, 2023, ErrorMessage = "Значення повинно бути від 1 до 100.")]
+        [Range(1990, 9999, ErrorMessage = $"Значення повинно бути 1990 - Поточний рік")]
         public string? Year { get; set; }
 
         [Url(ErrorMessage = "Неправильний формат URL-покликання.")]

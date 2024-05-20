@@ -68,7 +68,6 @@ namespace Zhuk.University.Tachka.Web.Pages.User
             TempData.Keep("ShowGreenBanner");
 
             return RedirectToPage("/User/EditCar", new { id = id });
-            ;
         }
     }
 }
