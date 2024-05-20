@@ -8,13 +8,9 @@ namespace Zhuk.University.Tachka.Database.Helpers
 {
     public static class YearHelper
     {
-        private static int ValidateTodayYear()
-        {
-            return DateTime.Now.Year;
-        }
         public static IEnumerable<int> GetYearsList()
         {
-            for (int year = 1990; year <= ValidateTodayYear(); year++)
+            for (int year = 1990; year <= DateTime.Now.Year; year++)
             {
                 yield return year;
             }

@@ -31,8 +31,7 @@ namespace Zhuk.University.Tachka.Web.Pages.Orders
         {
             _logger.LogDebug($"Started Action: Add order from ({User.Identity.Name})");
 
-            DateTime today = DateTime.Today;
-            if (startDate < today)
+            if (startDate < DateTime.Today)
             {
                 _logger.LogError($"Redirected User({User.Identity.Name}) to /Error page ");
                 return new RedirectToPageResult("/Error");
@@ -43,7 +42,7 @@ namespace Zhuk.University.Tachka.Web.Pages.Orders
             await _orderService.Create(new Order()
             {
                 CarId = id,
-                UserId = User.Identity.Name, // Name користувача з контексту авторизації
+                UserId = User.Identity.Name,
                 StartDate = startDate,
                 EndDate = endDate
             });
